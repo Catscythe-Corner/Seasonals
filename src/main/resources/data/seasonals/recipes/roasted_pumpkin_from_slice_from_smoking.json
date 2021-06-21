@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "autumnity:large_pumpkin_slice"
+  },
+  "result": "seasonals:roasted_pumpkin",
+  "experience": 0.35,
+  "cookingtime": 100,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ]
+}

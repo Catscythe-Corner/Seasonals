@@ -1,0 +1,103 @@
+{
+  "advancement": "minecraft:husbandry/balanced_diet",
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "mode": "modify",
+        "criteria": {
+          "seasonals:pumpkin_ice_cream": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:pumpkin_ice_cream"
+              }
+            }
+          },
+          "seasonals:pumpkin_milkshake": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:pumpkin_milkshake"
+              }
+            }
+          },
+          "seasonals:pumpkin_feast": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:pumpkin_feast"
+              }
+            }
+          },
+          "seasonals:roasted_pumpkin": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:roasted_pumpkin"
+              }
+            }
+          },
+          "seasonals:sweet_berry_ice_cream": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:sweet_berry_ice_cream"
+              }
+            }
+          },
+          "seasonals:sweet_berry_milkshake": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:sweet_berry_milkshake"
+              }
+            }
+          },
+          "seasonals:chocolate_pumpkin_muffin": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:chocolate_pumpkin_muffin"
+              }
+            }
+          },
+          "seasonals:sweet_berry_vanilla_yogurt": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "item": "seasonals:sweet_berry_vanilla_yogurt"
+              }
+            }
+          }
+        },
+        "requirements": [
+          [
+            "seasonals:pumpkin_ice_cream"
+          ],
+          [
+            "seasonals:pumpkin_milkshake"
+          ],
+          [
+            "seasonals:pumpkin_feast"
+          ],
+          [
+            "seasonals:roasted_pumpkin"
+          ],
+          [
+            "seasonals:sweet_berry_ice_cream"
+          ],
+          [
+            "seasonals:sweet_berry_milkshake"
+          ],
+          [
+            "seasonals:chocolate_pumpkin_muffin"
+          ],
+          [
+            "seasonals:sweet_berry_vanilla_yogurt"
+          ]
+        ]
+      }
+    }
+  ]
+}

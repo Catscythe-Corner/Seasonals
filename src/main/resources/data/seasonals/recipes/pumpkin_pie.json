@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "seasonals:roasted_pumpkin"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:eggs"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pumpkin_pie"
+  },
+  "conditions": [
+    {
+      "type": "seasonals:config",
+      "value": "outside_recipes"
+    }
+  ]
+}

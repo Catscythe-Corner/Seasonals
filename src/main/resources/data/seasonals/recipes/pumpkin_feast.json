@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:cooked_chicken"
+    },
+    {
+      "item": "seasonals:roasted_pumpkin"
+    }
+  ],
+  "result": {
+    "item": "seasonals:pumpkin_feast",
+    "count": 1
+  }
+}

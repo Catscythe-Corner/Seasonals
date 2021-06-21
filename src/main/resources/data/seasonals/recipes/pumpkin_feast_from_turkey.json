@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "autumnity:cooked_turkey_piece"
+    },
+    {
+      "item": "autumnity:cooked_turkey_piece"
+    },
+    {
+      "item": "seasonals:roasted_pumpkin"
+    }
+  ],
+  "result": {
+    "item": "seasonals:pumpkin_feast",
+    "count": 1
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "autumnity"
+    }
+  ]
+}

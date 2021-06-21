@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "seasonals:block/sweet_berry/sweet_berry_ice_cream_block"
+  }
+}

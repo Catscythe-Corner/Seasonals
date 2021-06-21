@@ -1,0 +1,40 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="All rights reserved"
+
+[[mods]]
+modId="seasonals"
+version="${file.jarVersion}"
+displayName="Seasonals"
+logoFile="seasonals.png"
+credits="Thanks to Team Abnormals for creating Neapolitan."
+authors="cosmicgelatin"
+description='''Addon for Neapolitan that adds seasonal flavors, including pumpkin and sweet berry.'''
+
+[[dependencies.seasonals]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.seasonals]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.seasonals]]
+    modId="neapolitan"
+    mandatory=true
+    versionRange="[2.0.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.seasonals]]
+    modId="abnormals_core"
+    mandatory=true
+    versionRange="[3.1.1,)"
+    ordering="AFTER"
+    side="BOTH"

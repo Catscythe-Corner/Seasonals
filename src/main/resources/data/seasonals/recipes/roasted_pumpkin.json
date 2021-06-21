@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:pumpkin"
+  },
+  "result": "seasonals:roasted_pumpkin",
+  "experience": 0.35,
+  "cookingtime": 200
+}
