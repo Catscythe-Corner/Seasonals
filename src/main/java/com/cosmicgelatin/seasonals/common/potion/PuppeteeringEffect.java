@@ -18,35 +18,35 @@ public class PuppeteeringEffect extends Effect {
     }
 
     @Override
-    public void performEffect(LivingEntity entity, int amplifier) {
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity)entity;
-            if (SeasonalsEvents.puppetBound.containsKey(player.getUniqueID())) {
-                Integer puppetId = SeasonalsEvents.puppetBound.get(player.getUniqueID());
-                LivingEntity puppet = (LivingEntity)(player.getEntityWorld().getEntityByID(puppetId));
-                if (puppet == null || puppet.getShouldBeDead() || puppet.getDistance(player) > 8.0 + amplifier
-                        || player.getActivePotionEffect(SeasonalsEffects.PUPPETEERING.get()).getDuration() <= 5
-                        || (puppet.getHealth() >= player.getHealth() && !player.isCreative()) || player.isSneaking()
+            if (SeasonalsEvents.puppetBound.containsKey(player.getUUID())) {
+                Integer puppetId = SeasonalsEvents.puppetBound.get(player.getUUID());
+                LivingEntity puppet = (LivingEntity)(player.getCommandSenderWorld().getEntity(puppetId));
+                if (puppet == null || puppet.isDeadOrDying() || puppet.distanceTo(player) > 8.0 + amplifier
+                        || player.getEffect(SeasonalsEffects.PUPPETEERING.get()).getDuration() <= 5
+                        || (puppet.getHealth() >= player.getHealth() && !player.isCreative()) || player.isShiftKeyDown()
                         || (puppet instanceof PlayerEntity && ((PlayerEntity)puppet).isCreative())) {
-                    SeasonalsEvents.puppetBound.remove(player.getUniqueID());
+                    SeasonalsEvents.puppetBound.remove(player.getUUID());
                 }
                 else {
-                    Vector3d pos = puppet.getPositionVec();
-                    Random rand = player.getEntityWorld().getRandom();
-                    if (player.getEntityWorld().getGameTime()%2==0) {player.getEntityWorld().addParticle
-                            (ParticleTypes.ENCHANT, pos.getX() + rand.nextDouble(), pos.getY() + rand.nextDouble() + 0.25d, pos.getZ() + rand.nextDouble(),
+                    Vector3d pos = puppet.position();
+                    Random rand = player.getCommandSenderWorld().getRandom();
+                    if (player.getCommandSenderWorld().getGameTime()%2==0) {player.getCommandSenderWorld().addParticle
+                            (ParticleTypes.ENCHANT, pos.x() + rand.nextDouble(), pos.y() + rand.nextDouble() + 0.25d, pos.z() + rand.nextDouble(),
                                     ((double)rand.nextFloat() - 0.5D) * 0.5D, ((double)rand.nextFloat() - 0.125D) * 0.5D, ((double)rand.nextFloat() - 0.5D) * 0.5D); }
                     puppet.fallDistance=0.0F;
-                    Vector3d betweenVector = (pos.subtract(player.getPositionVec().add(player.getLookVec().mul(puppet.getDistance(player), puppet.getDistance(player), puppet.getDistance(player))))).mul(-1.0d, -1.0d, -1.0d);
+                    Vector3d betweenVector = (pos.subtract(player.position().add(player.getLookAngle().add(puppet.distanceTo(player), puppet.distanceTo(player), puppet.distanceTo(player))))).add(-1.0d, -1.0d, -1.0d);
                     betweenVector = betweenVector.length() > 1.0 ? betweenVector.normalize(): betweenVector;
-                    puppet.setMotion(betweenVector);
+                    puppet.setDeltaMovement(betweenVector);
                 }
             }
         }
     }
 
     @Override
-    public boolean isReady(int duration, int amplifier) {
+    public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
     }
 }

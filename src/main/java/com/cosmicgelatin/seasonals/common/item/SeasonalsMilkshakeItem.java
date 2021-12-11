@@ -29,32 +29,32 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
     }
 
     @Override
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entity) {
+    public ItemStack finishUsingItem(ItemStack stack, World worldIn, LivingEntity entity) {
         this.handleEffects(entity);
-        return super.onItemUseFinish(stack, worldIn, entity);
+        return super.finishUsingItem(stack, worldIn, entity);
     }
 
     @Override
-    public ActionResultType itemInteractionForEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
-        if (entity.world.isRemote) {
+    public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity player, LivingEntity entity, Hand hand) {
+        if (entity.level.isClientSide) {
             return ActionResultType.PASS;
         } else {
-            entity.world.playSound((PlayerEntity)null, entity.getPosition(), SoundEvents.ENTITY_WANDERING_TRADER_DRINK_MILK, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+            entity.level.playSound((PlayerEntity)null, entity.blockPosition(), SoundEvents.WANDERING_TRADER_DRINK_MILK, SoundCategory.NEUTRAL, 1.0F, 1.0F);
             if (player instanceof ServerPlayerEntity) {
                 ServerPlayerEntity serverplayerentity = (ServerPlayerEntity)player;
                 CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
-                serverplayerentity.addStat(Stats.ITEM_USED.get(this));
+                serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
             }
 
-            if (entity.getActivePotionEffect((Effect) NeapolitanEffects.VANILLA_SCENT.get()) == null) {
+            if (entity.getEffect((Effect) NeapolitanEffects.VANILLA_SCENT.get()) == null) {
                 this.handleEffects(entity);
             }
 
-            if (!player.abilities.isCreativeMode) {
+            if (!player.abilities.instabuild) {
                 stack.shrink(1);
                 ItemStack itemstack = new ItemStack(Items.GLASS_BOTTLE);
-                if (!player.inventory.addItemStackToInventory(itemstack)) {
-                    player.dropItem(itemstack, false);
+                if (!player.inventory.add(itemstack)) {
+                    player.drop(itemstack, false);
                 }
             }
 
@@ -63,7 +63,7 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
     }
 
     private void handleEffects(LivingEntity user) {
-        ImmutableList<EffectInstance> effects = ImmutableList.copyOf(user.getActivePotionEffects());
+        ImmutableList<EffectInstance> effects = ImmutableList.copyOf(user.getActiveEffects());
 
         if (effects.size() > 1) {
             if (this == SeasonalsItems.PUMPKIN_MILKSHAKE.get()) {
@@ -71,16 +71,16 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                 int numEff = 0;
 
                 for (EffectInstance e : effects) {
-                    if (e.getPotion() != Effects.BAD_OMEN && e.getPotion() != Effects.HERO_OF_THE_VILLAGE) {
+                    if (e.getEffect() != Effects.BAD_OMEN && e.getEffect() != Effects.HERO_OF_THE_VILLAGE) {
                         numEff++;
                         durationSum += e.getDuration();
-                        user.removePotionEffect(e.getPotion());
+                        user.removeEffect(e.getEffect());
                     }
                 }
 
                 for (EffectInstance e : effects) {
-                    if (e.getPotion() != Effects.BAD_OMEN && e.getPotion() != Effects.HERO_OF_THE_VILLAGE) {
-                        user.addPotionEffect(new EffectInstance(e.getPotion(), durationSum / numEff, e.getAmplifier()));
+                    if (e.getEffect() != Effects.BAD_OMEN && e.getEffect() != Effects.HERO_OF_THE_VILLAGE) {
+                        user.addEffect(new EffectInstance(e.getEffect(), durationSum / numEff, e.getAmplifier()));
                     }
                 }
             }
@@ -92,12 +92,12 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                 int numEff = 0;
 
                 for (EffectInstance e : effects) {
-                    if (e.getPotion() != Effects.BAD_OMEN && e.getPotion() != Effects.HERO_OF_THE_VILLAGE) {
+                    if (e.getEffect() != Effects.BAD_OMEN && e.getEffect() != Effects.HERO_OF_THE_VILLAGE) {
                         numEff++;
-                        effs.add(e.getPotion());
+                        effs.add(e.getEffect());
                         amps.add(e.getAmplifier());
                         dura.add(e.getDuration());
-                        user.removePotionEffect(e.getPotion());
+                        user.removeEffect(e.getEffect());
                     }
                 }
 
@@ -106,7 +106,7 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                 Collections.shuffle(dura);
 
                 for (int i = 0; i < numEff; i++) {
-                    user.addPotionEffect(new EffectInstance(effs.get(i), dura.get(i), amps.get(i)));
+                    user.addEffect(new EffectInstance(effs.get(i), dura.get(i), amps.get(i)));
                 }
             }
         }
@@ -116,15 +116,15 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
         return 40;
     }
 
-    public UseAction getUseAction(ItemStack stack) {
+    public UseAction getUseAnimation(ItemStack stack) {
         return UseAction.DRINK;
     }
 
-    public SoundEvent getDrinkSound() {
-        return SoundEvents.ITEM_HONEY_BOTTLE_DRINK;
+    public SoundEvent getDrinkingSound() {
+        return SoundEvents.HONEY_DRINK;
     }
 
-    public SoundEvent getEatSound() {
-        return SoundEvents.ITEM_HONEY_BOTTLE_DRINK;
+    public SoundEvent getEatingSound() {
+        return SoundEvents.HONEY_DRINK;
     }
 }

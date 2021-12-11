@@ -35,12 +35,12 @@ public class SeasonalsEvents {
         LivingEntity entityLiving = event.getEntityLiving();
         DamageSource source = event.getSource();
 
-        if (source.getTrueSource() instanceof PlayerEntity && ((PlayerEntity)source.getTrueSource()).getActivePotionEffect(SeasonalsEffects.PUPPETEERING.get()) != null && !puppetBound.containsValue(entityLiving.getEntityId())) {
-            puppetBound.put(source.getTrueSource().getUniqueID(), entityLiving.getEntityId());
+        if (source.getDirectEntity() instanceof PlayerEntity && ((PlayerEntity)source.getDirectEntity()).getEffect(SeasonalsEffects.PUPPETEERING.get()) != null && !puppetBound.containsValue(entityLiving.getId())) {
+            puppetBound.put(source.getDirectEntity().getUUID(), entityLiving.getId());
         }
 
-        if (entityLiving.getActivePotionEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
-            if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource)source).getIsThornsDamage()) || isAtmosphericDamage(source)) {
+        if (entityLiving.getEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
+            if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource)source).isThorns()) || isAtmosphericDamage(source)) {
                 event.setCanceled(true);
             }
     }
@@ -64,21 +64,21 @@ public class SeasonalsEvents {
     @SubscribeEvent
     public static void onFoodEaten(LivingEntityUseItemEvent.Finish event) {
         if (event.getItem().getItem() == Items.SWEET_BERRIES)
-        {event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
+        {event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
         else if (SeasonalsConfig.COMMON.outsideEffects.get()) {
             if (event.getItem().getItem() == Items.PUMPKIN_PIE) {
-                event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 400));
+                event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 400));
             }
             else {
-                if (event.getItem().getItem() == NeapolitanItems.ADZUKI_CURRY.get()) {event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 300));}
+                if (event.getItem().getItem() == NeapolitanItems.ADZUKI_CURRY.get()) {event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 300));}
                 if (Seasonals.BERRY_GOOD) {
                     if (event.getItem().getItem() == BGItems.SWEET_BERRY_MINCE.get()) {
-                        event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 360));
+                        event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 360));
                     }
-                    else if (event.getItem().getItem() == BGItems.SWEET_BERRY_MEATBALLS.get()) {event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));}
+                    else if (event.getItem().getItem() == BGItems.SWEET_BERRY_MEATBALLS.get()) {event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));}
                 }
                 if (Seasonals.AUTUMNITY) {
-                    if (event.getItem().getItem() == AutumnityItems.PUMPKIN_BREAD.get()) {event.getEntityLiving().addPotionEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 500));}
+                    if (event.getItem().getItem() == AutumnityItems.PUMPKIN_BREAD.get()) {event.getEntityLiving().addEffect(new EffectInstance(SeasonalsEffects.PUPPETEERING.get(), 500));}
                 }
             }
         }
@@ -87,7 +87,7 @@ public class SeasonalsEvents {
     @SubscribeEvent
     public static void effectCured(PotionEvent.PotionRemoveEvent event) {
         LivingEntity entityLiving = event.getEntityLiving();
-        if (puppetBound.containsKey(entityLiving.getUniqueID())) {puppetBound.remove(entityLiving.getUniqueID());}
+        if (puppetBound.containsKey(entityLiving.getUUID())) {puppetBound.remove(entityLiving.getUUID());}
     }
 
     private static boolean isAtmosphericDamage(DamageSource source) {

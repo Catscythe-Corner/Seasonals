@@ -15,19 +15,19 @@ public class FallFlavorEffect extends Effect {
     }
 
     @Override
-    public void performEffect(LivingEntity entity, int amplifier) {
-        if (!entity.world.isRemote) {
-            int duration = entity.getActivePotionEffect(SeasonalsEffects.FALL_FLAVOR.get()).getDuration();
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
+        if (!entity.level.isClientSide) {
+            int duration = entity.getEffect(SeasonalsEffects.FALL_FLAVOR.get()).getDuration();
             if ((duration - 20) % (300 / ((amplifier % 32) + 1))  == 0) {
-                if (entity instanceof PlayerEntity && ((PlayerEntity) entity).getFoodStats().getFoodLevel() < 20) {
-                    entity.onFoodEaten(entity.getEntityWorld(), new Item(new Item.Properties().food(Foods.DRIED_KELP)).getDefaultInstance());
+                if (entity instanceof PlayerEntity && ((PlayerEntity) entity).getFoodData().getFoodLevel() < 20) {
+                    entity.eat(entity.getCommandSenderWorld(), new Item(new Item.Properties().food(Foods.DRIED_KELP)).getDefaultInstance());
                 }
             }
         }
     }
 
     @Override
-    public boolean isReady(int duration, int amplifier) {
+    public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
     }
 }
