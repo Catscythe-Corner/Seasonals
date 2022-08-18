@@ -1,7 +1,7 @@
 package com.cosmicgelatin.seasonals.core.other;
 
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
+import com.teamabnormals.blueprint.core.util.DataUtil;
 
 public class SeasonalsCompat {
 

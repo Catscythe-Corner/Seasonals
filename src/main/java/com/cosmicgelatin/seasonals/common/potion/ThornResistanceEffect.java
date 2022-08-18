@@ -1,12 +1,12 @@
 package com.cosmicgelatin.seasonals.common.potion;
 
-import net.minecraft.potion.Effect;
-import net.minecraft.potion.EffectType;
-
-public class ThornResistanceEffect extends Effect {
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+//TODO Put this in SeasonalsEffects
+public class ThornResistanceEffect extends MobEffect {
 
     public ThornResistanceEffect() {
-        super(EffectType.BENEFICIAL, 14172504);
+        super(MobEffectCategory.BENEFICIAL, 14172504);
     }
 }
 

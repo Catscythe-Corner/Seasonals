@@ -2,8 +2,8 @@ package com.cosmicgelatin.seasonals.core;
 
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
-import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
-import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
+import com.teamabnormals.blueprint.core.util.DataUtil;
+import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -37,14 +37,11 @@ public class Seasonals {
         SeasonalsEffects.EFFECTS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SeasonalsConfig.COMMON_SPEC);
-        DataUtil.registerConfigCondition(Seasonals.MODID, SeasonalsConfig.COMMON);
 
         modEventBus.addListener(this::setupCommon);
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            SeasonalsCompat.registerCompostables();
-        });
+        event.enqueueWork(SeasonalsCompat::registerCompostables);
     }
 }

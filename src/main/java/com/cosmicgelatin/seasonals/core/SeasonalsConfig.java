@@ -1,9 +1,8 @@
 package com.cosmicgelatin.seasonals.core;
 
-import com.minecraftabnormals.abnormals_core.core.annotations.ConfigKey;
+import com.teamabnormals.blueprint.core.annotations.ConfigKey;
 import net.minecraftforge.common.ForgeConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
-
 public class SeasonalsConfig {
     public static class Common {
         @ConfigKey("outside_effects")
