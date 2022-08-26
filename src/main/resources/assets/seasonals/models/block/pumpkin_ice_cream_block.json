@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "seasonals:block/pumpkin/pumpkin_ice_cream_block"
-  }
-}
