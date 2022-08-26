@@ -89,9 +89,9 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                 }
             }
             else if (this == SeasonalsItems.SWEET_BERRY_MILKSHAKE.get()) {
-                ArrayList<MobEffect> effs = new ArrayList<MobEffect>();
-                ArrayList<Integer> amps = new ArrayList<Integer>();
-                ArrayList<Integer> dura = new ArrayList<Integer>();
+                ArrayList<MobEffect> effs = new ArrayList<>();
+                ArrayList<Integer> amps = new ArrayList<>();
+                ArrayList<Integer> dura = new ArrayList<>();
 
                 int numEff = 0;
 

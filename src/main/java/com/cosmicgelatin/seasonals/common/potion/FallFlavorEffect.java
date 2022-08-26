@@ -13,7 +13,7 @@ public class FallFlavorEffect extends MobEffect {
     public FallFlavorEffect() {
         super(MobEffectCategory.BENEFICIAL, 11683328);
     }
-//No clue what this is?
+//TODO No clue what this is?
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level.isClientSide) {
