@@ -1,5 +1,6 @@
 {
-  "advancement": "minecraft:nether/all_effects",
+  "selector": "minecraft:nether/all_effects",
+  "priority": "normal",
   "modifiers": [
     {
       "type": "effects_changed",
@@ -7,7 +8,7 @@
         "criteria": "all_effects",
         "removes": false,
         "effects": {
-          "seasonals:puppeteering": {},
+          "seasonals:fall_flavor": {},
           "seasonals:thorn_resistance": {}
         }
       }

@@ -23,14 +23,14 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicBlockItem(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK);
         basicBlockItem(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK);
+        generatedBlockItemWithItemTexture(SeasonalsBlocks.PUMPKIN_CAKE);
+        generatedBlockItemWithItemTexture(SeasonalsBlocks.SWEET_BERRY_CAKE);
         basicItem(SeasonalsItems.ROASTED_PUMPKIN);
         basicItem(SeasonalsItems.PUMPKIN_FEAST);
         basicItem(SeasonalsItems.PUMPKIN_ICE_CREAM);
         basicItem(SeasonalsItems.PUMPKIN_MILKSHAKE);
-        basicItem(SeasonalsItems.PUMPKIN_CAKE);
         basicItem(SeasonalsItems.SWEET_BERRY_ICE_CREAM);
         basicItem(SeasonalsItems.SWEET_BERRY_MILKSHAKE);
-        basicItem(SeasonalsItems.SWEET_BERRY_CAKE);
         basicItem(SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN);
         basicItem(SeasonalsItems.SWEET_BERRY_VANILLA_YOGURT);
     }
@@ -41,5 +41,9 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
 
     private void basicBlockItem(Supplier<? extends Block> blockForItem) {
         withExistingParent(name(blockForItem.get()), modBlockLocation(name(blockForItem.get())));
+    }
+
+    private void generatedBlockItemWithItemTexture(Supplier<? extends Block> block) {
+        withExistingParent(name(block.get()), GENERATED).texture(LAYER0, modItemLocation(name(block.get())));
     }
 }

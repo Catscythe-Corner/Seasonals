@@ -20,11 +20,8 @@ public class SeasonalsItems {
     public static final RegistryObject<Item> PUMPKIN_FEAST = HELPER.createItem("pumpkin_feast", () -> new Item(new Item.Properties().food(Foods.PUMPKIN_FEAST).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = HELPER.createItem("pumpkin_ice_cream", () -> new BowlFoodItem(new Item.Properties().food(Foods.PUMPKIN_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> PUMPKIN_MILKSHAKE = HELPER.createItem("pumpkin_milkshake", () -> new SeasonalsMilkshakeItem(new Item.Properties().food(Foods.PUMPKIN_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_CAKE = HELPER.createItem("pumpkin_cake", () -> new BlockItem(SeasonalsBlocks.PUMPKIN_CAKE.get(), new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(1)));
-
     public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = HELPER.createItem("sweet_berry_ice_cream", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> SWEET_BERRY_MILKSHAKE = HELPER.createItem("sweet_berry_milkshake", () -> new SeasonalsMilkshakeItem(new Item.Properties().food(Foods.SWEET_BERRY_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> SWEET_BERRY_CAKE = HELPER.createItem("sweet_berry_cake", () -> new BlockItem(SeasonalsBlocks.SWEET_BERRY_CAKE.get(), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
 
     public static final RegistryObject<Item> CHOCOLATE_PUMPKIN_MUFFIN = HELPER.createItem("chocolate_pumpkin_muffin", () -> new Item(new Item.Properties().food(Foods.CHOCOLATE_PUMPKIN_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> SWEET_BERRY_VANILLA_YOGURT = HELPER.createItem("sweet_berry_vanilla_yogurt", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_VANILLA_YOGURT).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));

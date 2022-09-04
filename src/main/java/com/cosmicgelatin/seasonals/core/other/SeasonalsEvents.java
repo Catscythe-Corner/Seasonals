@@ -2,6 +2,7 @@ package com.cosmicgelatin.seasonals.core.other;
 
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.SeasonalsConfig;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.teamabnormals.berry_good.core.registry.BGItems;
@@ -33,7 +34,7 @@ public class SeasonalsEvents {
         DamageSource source = event.getSource();
 
         if (entityLiving.getEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
-            //Todo This could be made into a tag
+            //Todo This could be made into a Config?
             if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource)source).isThorns()) /*|| isAtmosphericDamage(source)*/) {
                 event.setCanceled(true);
             }
@@ -49,9 +50,9 @@ public class SeasonalsEvents {
             TradeUtil.addVillagerTrades(event, TradeUtil.JOURNEYMAN,
                     new TradeUtil.BlueprintTrade(1, SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN.get(), 8, 12, 10));
             TradeUtil.addVillagerTrades(event, TradeUtil.EXPERT,
-                    new TradeUtil.BlueprintTrade(3, SeasonalsItems.PUMPKIN_CAKE.get(), 1, 12, 15));
+                    new TradeUtil.BlueprintTrade(3, SeasonalsBlocks.PUMPKIN_CAKE.get().asItem(), 1, 12, 15));
             TradeUtil.addVillagerTrades(event, TradeUtil.EXPERT,
-                    new TradeUtil.BlueprintTrade(3, SeasonalsItems.SWEET_BERRY_CAKE.get(), 1, 12, 15));
+                    new TradeUtil.BlueprintTrade(3, SeasonalsBlocks.SWEET_BERRY_CAKE.get().asItem(), 1, 12, 15));
         }
     }
 

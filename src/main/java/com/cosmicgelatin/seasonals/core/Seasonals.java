@@ -2,6 +2,10 @@ package com.cosmicgelatin.seasonals.core;
 
 import com.cosmicgelatin.seasonals.core.data.client.SeasonalsBlockStateProvider;
 import com.cosmicgelatin.seasonals.core.data.client.SeasonalsItemModelProvider;
+import com.cosmicgelatin.seasonals.core.data.client.SeasonalsLangProvider;
+import com.cosmicgelatin.seasonals.core.data.server.SeasonalsLootTableProvider;
+import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancementModifierProvider;
+import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
 import com.teamabnormals.blueprint.core.util.DataUtil;
@@ -65,9 +69,12 @@ public class Seasonals {
         if (event.includeClient()) {
             generator.addProvider(new SeasonalsBlockStateProvider(generator, fileHelper));
             generator.addProvider(new SeasonalsItemModelProvider(generator, fileHelper));
+            generator.addProvider(new SeasonalsLangProvider(generator));
         }
         if (event.includeServer()) {
-
+            generator.addProvider(new SeasonalsLootTableProvider(generator));
+            generator.addProvider(new SeasonalsBlockTagsProvider(generator, fileHelper));
+            generator.addProvider(new SeasonalsAdvancementModifierProvider(generator));
         }
     }
 }

@@ -1,24 +1,18 @@
 {
-  "advancement": "minecraft:husbandry/balanced_diet",
+  "selector": "minecraft:husbandry/balanced_diet",
+  "priority": "normal",
   "modifiers": [
     {
       "type": "criteria",
       "config": {
-        "mode": "modify",
         "criteria": {
-          "seasonals:pumpkin_ice_cream": {
+          "seasonals:roasted_pumpkin": {
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:pumpkin_ice_cream"
-              }
-            }
-          },
-          "seasonals:pumpkin_milkshake": {
-            "trigger": "minecraft:consume_item",
-            "conditions": {
-              "item": {
-                "item": "seasonals:pumpkin_milkshake"
+                "items": [
+                  "seasonals:roasted_pumpkin"
+                ]
               }
             }
           },
@@ -26,15 +20,29 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:pumpkin_feast"
+                "items": [
+                  "seasonals:pumpkin_feast"
+                ]
               }
             }
           },
-          "seasonals:roasted_pumpkin": {
+          "seasonals:pumpkin_ice_cream": {
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:roasted_pumpkin"
+                "items": [
+                  "seasonals:pumpkin_ice_cream"
+                ]
+              }
+            }
+          },
+          "seasonals:pumpkin_milkshake": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:pumpkin_milkshake"
+                ]
               }
             }
           },
@@ -42,7 +50,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:sweet_berry_ice_cream"
+                "items": [
+                  "seasonals:sweet_berry_ice_cream"
+                ]
               }
             }
           },
@@ -50,7 +60,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:sweet_berry_milkshake"
+                "items": [
+                  "seasonals:sweet_berry_milkshake"
+                ]
               }
             }
           },
@@ -58,7 +70,9 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:chocolate_pumpkin_muffin"
+                "items": [
+                  "seasonals:chocolate_pumpkin_muffin"
+                ]
               }
             }
           },
@@ -66,23 +80,25 @@
             "trigger": "minecraft:consume_item",
             "conditions": {
               "item": {
-                "item": "seasonals:sweet_berry_vanilla_yogurt"
+                "items": [
+                  "seasonals:sweet_berry_vanilla_yogurt"
+                ]
               }
             }
           }
         },
         "requirements": [
           [
-            "seasonals:pumpkin_ice_cream"
-          ],
-          [
-            "seasonals:pumpkin_milkshake"
+            "seasonals:roasted_pumpkin"
           ],
           [
             "seasonals:pumpkin_feast"
           ],
           [
-            "seasonals:roasted_pumpkin"
+            "seasonals:pumpkin_ice_cream"
+          ],
+          [
+            "seasonals:pumpkin_milkshake"
           ],
           [
             "seasonals:sweet_berry_ice_cream"
@@ -96,7 +112,8 @@
           [
             "seasonals:sweet_berry_vanilla_yogurt"
           ]
-        ]
+        ],
+        "should_replace_requirements": false
       }
     }
   ]
