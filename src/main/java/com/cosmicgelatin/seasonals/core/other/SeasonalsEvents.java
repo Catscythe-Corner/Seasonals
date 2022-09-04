@@ -26,16 +26,11 @@ import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
 public class SeasonalsEvents {
-    public static final HashMap<UUID, Integer> puppetBound = new HashMap<>();
     
     @SubscribeEvent
     public static void onEntityAttacked(LivingAttackEvent event) {
         LivingEntity entityLiving = event.getEntityLiving();
         DamageSource source = event.getSource();
-
-        if (source.getDirectEntity() instanceof Player && ((Player)source.getDirectEntity()).getEffect(SeasonalsEffects.PUPPETEERING.get()) != null && !puppetBound.containsValue(entityLiving.getId())) {
-            puppetBound.put(source.getDirectEntity().getUUID(), entityLiving.getId());
-        }
 
         if (entityLiving.getEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
             //Todo This could be made into a tag
@@ -66,27 +61,30 @@ public class SeasonalsEvents {
         {event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
         else if (SeasonalsConfig.COMMON.outsideEffects.get()) {
             if (event.getItem().getItem() == Items.PUMPKIN_PIE) {
-                event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.PUPPETEERING.get(), 400));
+                event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 400));
             }
             else {
-                if (event.getItem().getItem() == NeapolitanItems.ADZUKI_CURRY.get()) {event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.PUPPETEERING.get(), 300));}
+                if (event.getItem().getItem() == NeapolitanItems.ADZUKI_CURRY.get()) {
+                    event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 300));
+                }
                 if (Seasonals.BERRY_GOOD) {
                     if (event.getItem().getItem() == BGItems.SWEET_BERRY_MINCE.get()) {
                         event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 360));
                     }
-                    else if (event.getItem().getItem() == BGItems.SWEET_BERRY_MEATBALLS.get()) {event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));}
+                    else if (event.getItem().getItem() == BGItems.SWEET_BERRY_MEATBALLS.get()) {
+                        event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));
+                    }
                 }
                 if (Seasonals.AUTUMNITY) {
-                    //if (event.getItem().getItem() == AutumnityItems.PUMPKIN_BREAD.get()) {event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.PUPPETEERING.get(), 500));}
+                    /*
+                    if (event.getItem().getItem() == AutumnityItems.PUMPKIN_BREAD.get()) {
+                        event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 500));
+                    }
+
+                     */
                 }
             }
         }
-    }
-
-    @SubscribeEvent
-    public static void effectCured(PotionEvent.PotionRemoveEvent event) {
-        LivingEntity entityLiving = event.getEntityLiving();
-        if (puppetBound.containsKey(entityLiving.getUUID())) {puppetBound.remove(entityLiving.getUUID());}
     }
 /*
     private static boolean isAtmosphericDamage(DamageSource source) {
