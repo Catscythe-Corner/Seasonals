@@ -37,7 +37,7 @@ public class PuppeteeringEffect extends Effect {
                             (ParticleTypes.ENCHANT, pos.x() + rand.nextDouble(), pos.y() + rand.nextDouble() + 0.25d, pos.z() + rand.nextDouble(),
                                     ((double)rand.nextFloat() - 0.5D) * 0.5D, ((double)rand.nextFloat() - 0.125D) * 0.5D, ((double)rand.nextFloat() - 0.5D) * 0.5D); }
                     puppet.fallDistance=0.0F;
-                    Vector3d betweenVector = (pos.subtract(player.position().add(player.getLookAngle().multiply(puppet.distanceTo(player), puppet.distanceTo(player), puppet.distanceTo(player))))).add(-1.0d, -1.0d, -1.0d);
+                    Vector3d betweenVector = (pos.subtract(player.position().add(player.getLookAngle().multiply(puppet.distanceTo(player), puppet.distanceTo(player), puppet.distanceTo(player))))).multiply(-1.0d, -1.0d, -1.0d);
                     betweenVector = betweenVector.length() > 1.0 ? betweenVector.normalize(): betweenVector;
                     puppet.setDeltaMovement(betweenVector);
                 }
