@@ -34,7 +34,6 @@ public class SeasonalsEvents {
         DamageSource source = event.getSource();
 
         if (entityLiving.getEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
-            //Todo This could be made into a Config?
             if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource)source).isThorns()) /*|| isAtmosphericDamage(source)*/) {
                 event.setCanceled(true);
             }
