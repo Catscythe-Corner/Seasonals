@@ -12,8 +12,10 @@ import com.teamabnormals.blueprint.core.util.DataUtil;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -24,7 +26,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(Seasonals.MODID)
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
 public class Seasonals {
@@ -53,8 +54,13 @@ public class Seasonals {
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SeasonalsConfig.COMMON_SPEC);
 
+        modEventBus.addGenericListener(Block.class, this::registerConfigConditions);
         modEventBus.addListener(this::setupCommon);
         modEventBus.addListener(this::gatherData);
+    }
+
+    private void registerConfigConditions(RegistryEvent.Register<Block> event) {
+        DataUtil.registerConfigCondition(Seasonals.MODID, SeasonalsConfig.COMMON);
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
