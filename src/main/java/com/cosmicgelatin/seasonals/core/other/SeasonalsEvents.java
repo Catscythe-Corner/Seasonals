@@ -13,24 +13,19 @@ import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
-import net.minecraftforge.event.entity.living.PotionEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.HashMap;
-import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
 public class SeasonalsEvents {
     
     @SubscribeEvent
     public static void onEntityAttacked(LivingAttackEvent event) {
-        LivingEntity entityLiving = event.getEntityLiving();
+        LivingEntity entityLiving = event.getEntity();
         DamageSource source = event.getSource();
 
         if (entityLiving.getEffect(SeasonalsEffects.THORN_RESISTANCE.get()) != null)
@@ -58,21 +53,21 @@ public class SeasonalsEvents {
     @SubscribeEvent
     public static void onFoodEaten(LivingEntityUseItemEvent.Finish event) {
         if (event.getItem().getItem() == Items.SWEET_BERRIES)
-        {event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
+        {event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
         else if (SeasonalsConfig.COMMON.outsideEffects.get()) {
             if (event.getItem().getItem() == Items.PUMPKIN_PIE) {
-                event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 400));
+                event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 400));
             }
             else {
                 if (event.getItem().getItem() == NeapolitanItems.ADZUKI_CURRY.get()) {
-                    event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 300));
+                    event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 300));
                 }
                 if (Seasonals.BERRY_GOOD) {
                     if (event.getItem().getItem() == BGItems.SWEET_BERRY_MINCE.get()) {
-                        event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 360));
+                        event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 360));
                     }
                     else if (event.getItem().getItem() == BGItems.SWEET_BERRY_MEATBALLS.get()) {
-                        event.getEntityLiving().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));
+                        event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 600));
                     }
                 }
                 if (Seasonals.AUTUMNITY) {

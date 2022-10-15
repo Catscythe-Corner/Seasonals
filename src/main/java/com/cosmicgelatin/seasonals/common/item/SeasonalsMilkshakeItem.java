@@ -27,6 +27,8 @@ import net.minecraft.world.level.Level;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import net.minecraft.world.item.Item.Properties;
+
 public class SeasonalsMilkshakeItem extends DrinkItem {
 
     public SeasonalsMilkshakeItem(Properties builder) {

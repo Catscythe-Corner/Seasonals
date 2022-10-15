@@ -14,6 +14,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply from: 'https://raw.githubusercontent.com/SizableShrimp/ForgeUpdatesRemapper/main/remapper.gradle'
+
 
 version = "${mc_version}-${mod_version}"
 group = 'com.cosmicgelatin'
@@ -93,7 +95,7 @@ dependencies {
     implementation fg.deobf("curse.maven:berry-good-355589:${bg_id}")
     //implementation fg.deobf("curse.maven:autumnity-365045:${autumnity_id}")
 
-    implementation fg.deobf("curse.maven:jei-238222:3969092")
+    implementation fg.deobf("curse.maven:jei-238222:3969039")
 }
 
 jar {

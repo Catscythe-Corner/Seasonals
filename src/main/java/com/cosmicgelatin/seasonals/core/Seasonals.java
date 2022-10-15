@@ -8,6 +8,7 @@ import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancemen
 import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsLootConditions;
 import com.teamabnormals.blueprint.core.util.DataUtil;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
@@ -15,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -24,7 +24,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import net.minecraftforge.data.event.GatherDataEvent;
 
 @Mod(Seasonals.MODID)
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
@@ -53,14 +53,10 @@ public class Seasonals {
         SeasonalsEffects.EFFECTS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SeasonalsConfig.COMMON_SPEC);
+        SeasonalsLootConditions.LOOT_ITEM_CONDITION_TYPE.register(modEventBus);
 
-        modEventBus.addGenericListener(Block.class, this::registerConfigConditions);
         modEventBus.addListener(this::setupCommon);
         modEventBus.addListener(this::gatherData);
-    }
-
-    private void registerConfigConditions(RegistryEvent.Register<Block> event) {
-        DataUtil.registerConfigCondition(Seasonals.MODID, SeasonalsConfig.COMMON);
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
@@ -69,18 +65,18 @@ public class Seasonals {
 
     @SubscribeEvent
     public void gatherData(GatherDataEvent event) {
+        boolean includeClient = event.includeClient();
+        boolean includeServer = event.includeServer();
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
-        if (event.includeClient()) {
-            generator.addProvider(new SeasonalsBlockStateProvider(generator, fileHelper));
-            generator.addProvider(new SeasonalsItemModelProvider(generator, fileHelper));
-            generator.addProvider(new SeasonalsLangProvider(generator));
-        }
-        if (event.includeServer()) {
-            generator.addProvider(new SeasonalsLootTableProvider(generator));
-            generator.addProvider(new SeasonalsBlockTagsProvider(generator, fileHelper));
-            generator.addProvider(new SeasonalsAdvancementModifierProvider(generator));
-        }
+        generator.addProvider(includeClient, new SeasonalsBlockStateProvider(generator, fileHelper));
+        generator.addProvider(includeClient, new SeasonalsItemModelProvider(generator, fileHelper));
+        generator.addProvider(includeClient, new SeasonalsLangProvider(generator));
+
+        generator.addProvider(includeServer, new SeasonalsLootTableProvider(generator));
+        generator.addProvider(includeServer, new SeasonalsBlockTagsProvider(generator, fileHelper));
+        generator.addProvider(includeServer, new SeasonalsAdvancementModifierProvider(generator));
+
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ModelProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * Copied from the Original SMDatagenUtil in SullysMod, taken with permission
@@ -19,11 +20,11 @@ public class SeasonalsDatagenUtil {
     public static final String SWEET_BERRY = "sweet_berry/";
 
     public static String name(Block block) {
-        return block.getRegistryName().getPath();
+        return ForgeRegistries.BLOCKS.getKey(block).getPath();
     }
 
     public static String name(Item item) {
-        return item.getRegistryName().getPath();
+        return ForgeRegistries.ITEMS.getKey(item).getPath();
     }
 
     public static ResourceLocation modBlockLocation(String path) {
