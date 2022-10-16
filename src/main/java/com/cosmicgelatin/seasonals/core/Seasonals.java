@@ -51,9 +51,9 @@ public class Seasonals {
         REGISTRY_HELPER.register(modEventBus);
 
         SeasonalsEffects.EFFECTS.register(modEventBus);
+        SeasonalsLootConditions.LOOT_ITEM_CONDITION_TYPE.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SeasonalsConfig.COMMON_SPEC);
-        SeasonalsLootConditions.LOOT_ITEM_CONDITION_TYPE.register(modEventBus);
 
         modEventBus.addListener(this::setupCommon);
         modEventBus.addListener(this::gatherData);
