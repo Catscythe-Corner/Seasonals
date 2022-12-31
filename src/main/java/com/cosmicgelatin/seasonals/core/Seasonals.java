@@ -9,13 +9,12 @@ import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvi
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsLootConditions;
-import com.teamabnormals.blueprint.core.util.DataUtil;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -24,7 +23,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.data.event.GatherDataEvent;
 
 @Mod(Seasonals.MODID)
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)

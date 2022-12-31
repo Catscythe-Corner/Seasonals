@@ -2,32 +2,27 @@ package com.cosmicgelatin.seasonals.common.item;
 
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.google.common.collect.ImmutableList;
-
 import com.teamabnormals.neapolitan.common.item.DrinkItem;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanMobEffects;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.stats.Stats;
-import net.minecraft.util.*;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import java.util.ArrayList;
-import java.util.Collections;
-
-import net.minecraft.world.item.Item.Properties;
 
 public class SeasonalsMilkshakeItem extends DrinkItem {
 
@@ -69,50 +64,31 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
     }
 
     private void handleEffects(LivingEntity user) {
-        ImmutableList<MobEffectInstance> effects = ImmutableList.copyOf(user.getActiveEffects());
+        ImmutableList<MobEffectInstance> userEffects = ImmutableList.copyOf(user.getActiveEffects());
+        RandomSource randomSource = user.getRandom();
 
-        if (effects.size() > 1) {
+        if (userEffects.size() >= 1) {
             if (this == SeasonalsItems.PUMPKIN_MILKSHAKE.get()) {
-                int durationSum = 0;
-                int numEff = 0;
+                //works but gameplay wise it is a bit weird
+                int duration;
+                ArrayList<Integer> durations = new ArrayList<>();
+                durations.add(600);
+                durations.add(3600);
 
-                for (MobEffectInstance e : effects) {
-                    if (e.getEffect() != MobEffects.BAD_OMEN && e.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
-                        numEff++;
-                        durationSum += e.getDuration();
-                        user.removeEffect(e.getEffect());
+                for (MobEffectInstance effect : userEffects) {
+                    if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
+                        user.removeEffect(effect.getEffect());
+                        user.addEffect(new MobEffectInstance(effect.getEffect(), durations.get(randomSource.nextInt(2)), effect.getAmplifier()));
                     }
                 }
 
-                for (MobEffectInstance e : effects) {
-                    if (e.getEffect() != MobEffects.BAD_OMEN && e.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
-                        user.addEffect(new MobEffectInstance(e.getEffect(), durationSum / numEff, e.getAmplifier()));
-                    }
-                }
             }
             else if (this == SeasonalsItems.SWEET_BERRY_MILKSHAKE.get()) {
-                ArrayList<MobEffect> effs = new ArrayList<>();
-                ArrayList<Integer> amps = new ArrayList<>();
-                ArrayList<Integer> dura = new ArrayList<>();
-
-                int numEff = 0;
-
-                for (MobEffectInstance e : effects) {
-                    if (e.getEffect() != MobEffects.BAD_OMEN && e.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
-                        numEff++;
-                        effs.add(e.getEffect());
-                        amps.add(e.getAmplifier());
-                        dura.add(e.getDuration());
-                        user.removeEffect(e.getEffect());
+                for (MobEffectInstance effect : userEffects) {
+                    if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
+                        user.removeEffect(effect.getEffect());
+                        user.addEffect(new MobEffectInstance(effect.getEffect(), effect.getDuration(), randomSource.nextInt(3)));
                     }
-                }
-
-                Collections.shuffle(effs);
-                Collections.shuffle(amps);
-                Collections.shuffle(dura);
-
-                for (int i = 0; i < numEff; i++) {
-                    user.addEffect(new MobEffectInstance(effs.get(i), dura.get(i), amps.get(i)));
                 }
             }
         }

@@ -1,15 +1,18 @@
 package com.cosmicgelatin.seasonals.core.registry;
 
 import com.cosmicgelatin.seasonals.common.item.SeasonalsMilkshakeItem;
+import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanMobEffects;
-import com.cosmicgelatin.seasonals.core.Seasonals;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BowlFoodItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegistryObject;
 
 
 @Mod.EventBusSubscriber(modid = Seasonals.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
