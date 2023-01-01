@@ -69,16 +69,11 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
 
         if (userEffects.size() >= 1) {
             if (this == SeasonalsItems.PUMPKIN_MILKSHAKE.get()) {
-                //works but gameplay wise it is a bit weird
-                int duration;
-                ArrayList<Integer> durations = new ArrayList<>();
-                durations.add(600);
-                durations.add(3600);
-
                 for (MobEffectInstance effect : userEffects) {
                     if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
+                        int newDuration = effect.getDuration() < 3600 ? randomSource.nextIntBetweenInclusive(600, 3600) : randomSource.nextIntBetweenInclusive(3600, 7200);
                         user.removeEffect(effect.getEffect());
-                        user.addEffect(new MobEffectInstance(effect.getEffect(), durations.get(randomSource.nextInt(2)), effect.getAmplifier()));
+                        user.addEffect(new MobEffectInstance(effect.getEffect(), newDuration, effect.getAmplifier()));
                     }
                 }
 
