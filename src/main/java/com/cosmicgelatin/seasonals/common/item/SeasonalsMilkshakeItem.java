@@ -22,8 +22,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-import java.util.ArrayList;
-
 public class SeasonalsMilkshakeItem extends DrinkItem {
 
     public SeasonalsMilkshakeItem(Properties builder) {
@@ -67,7 +65,12 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
         ImmutableList<MobEffectInstance> userEffects = ImmutableList.copyOf(user.getActiveEffects());
         RandomSource randomSource = user.getRandom();
 
-        if (userEffects.size() >= 1) {
+        if (userEffects.size() != 0) {
+            /**
+             * Changes the duration of the active effects to a conditional random value.
+             * If the old duration is below 3 minutes the new duration is a value between 30 seconds and 3 minutes.
+             * If the old duration is above 3 minutes the new duration is a value between 3 minutes and 6 minutes.
+             */
             if (this == SeasonalsItems.PUMPKIN_MILKSHAKE.get()) {
                 for (MobEffectInstance effect : userEffects) {
                     if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
@@ -78,6 +81,9 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                 }
 
             }
+            /**
+             * Changes the level of the active effects to a random value between 1 and 3
+             */
             else if (this == SeasonalsItems.SWEET_BERRY_MILKSHAKE.get()) {
                 for (MobEffectInstance effect : userEffects) {
                     if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {

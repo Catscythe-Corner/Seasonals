@@ -16,7 +16,7 @@ public class FallFlavorEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level.isClientSide) {
-            if (entity instanceof Player player ) {
+            if (entity instanceof Player player) {
                 FoodData foodData = player.getFoodData();
                 int duration = player.getEffect(SeasonalsEffects.FALL_FLAVOR.get()).getDuration();
                 if (duration % (100 / ((amplifier % 32) + 1))  == 0) {
