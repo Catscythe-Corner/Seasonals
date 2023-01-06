@@ -4,6 +4,7 @@ import com.cosmicgelatin.seasonals.core.data.client.SeasonalsBlockStateProvider;
 import com.cosmicgelatin.seasonals.core.data.client.SeasonalsItemModelProvider;
 import com.cosmicgelatin.seasonals.core.data.client.SeasonalsLangProvider;
 import com.cosmicgelatin.seasonals.core.data.server.SeasonalsLootTableProvider;
+import com.cosmicgelatin.seasonals.core.data.server.SeasonalsRecipeProvider;
 import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancementModifierProvider;
 import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
@@ -75,6 +76,7 @@ public class Seasonals {
         generator.addProvider(includeServer, new SeasonalsLootTableProvider(generator));
         generator.addProvider(includeServer, new SeasonalsBlockTagsProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SeasonalsAdvancementModifierProvider(generator));
+        generator.addProvider(includeServer, new SeasonalsRecipeProvider(generator));
 
     }
 }

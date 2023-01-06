@@ -25,8 +25,8 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
         basicBlockItem(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK);
         generatedBlockItemWithItemTexture(SeasonalsBlocks.PUMPKIN_CAKE);
         generatedBlockItemWithItemTexture(SeasonalsBlocks.SWEET_BERRY_CAKE);
-        basicItem(SeasonalsItems.ROASTED_PUMPKIN);
-        basicItem(SeasonalsItems.PUMPKIN_FEAST);
+        basicItem(SeasonalsItems.PUMPKIN_PUREE);
+        basicItem(SeasonalsItems.RABBIT_ROAST);
         basicItem(SeasonalsItems.PUMPKIN_ICE_CREAM);
         basicItem(SeasonalsItems.PUMPKIN_MILKSHAKE);
         basicItem(SeasonalsItems.SWEET_BERRY_ICE_CREAM);

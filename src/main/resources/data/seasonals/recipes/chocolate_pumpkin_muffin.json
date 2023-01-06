@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "seasonals:roasted_pumpkin"
+      "item": "seasonals:pumpkin_puree"
     },
     {
       "item": "minecraft:sugar"

@@ -19,8 +19,8 @@ public class SeasonalsLangProvider extends LanguageProvider {
         add(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get(), "Sweet Berry Ice Cream Block");
         add(SeasonalsBlocks.SWEET_BERRY_CAKE.get(), "Sweet Berry Cake");
 
-        add(SeasonalsItems.ROASTED_PUMPKIN.get(), "Roasted Pumpkin");
-        add(SeasonalsItems.PUMPKIN_FEAST.get(), "Pumpkin Feast");
+        add(SeasonalsItems.PUMPKIN_PUREE.get(), "Roasted Pumpkin");
+        add(SeasonalsItems.RABBIT_ROAST.get(), "Rabbit Roast");
         add(SeasonalsItems.PUMPKIN_ICE_CREAM.get(), "Pumpkin Ice Cream");
         add(SeasonalsItems.PUMPKIN_MILKSHAKE.get(), "Pumpkin Milkshake");
         add(SeasonalsItems.SWEET_BERRY_ICE_CREAM.get(), "Sweet Berry Ice Cream");

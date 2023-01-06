@@ -40,7 +40,7 @@ public class SeasonalsEvents {
 
         if (type == VillagerProfession.FARMER) {
             TradeUtil.addVillagerTrades(event, TradeUtil.APPRENTICE,
-                    new TradeUtil.BlueprintTrade(SeasonalsItems.ROASTED_PUMPKIN.get(), 8, 1, 16, 2));
+                    new TradeUtil.BlueprintTrade(SeasonalsItems.PUMPKIN_PUREE.get(), 8, 1, 16, 2));
             TradeUtil.addVillagerTrades(event, TradeUtil.JOURNEYMAN,
                     new TradeUtil.BlueprintTrade(1, SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN.get(), 8, 12, 10));
             TradeUtil.addVillagerTrades(event, TradeUtil.EXPERT,
