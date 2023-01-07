@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "neapolitan:vanilla_milkshake"
+    }
+  ],
+  "result": {
+    "item": "seasonals:sweet_berry_milkshake"
+  }
+}

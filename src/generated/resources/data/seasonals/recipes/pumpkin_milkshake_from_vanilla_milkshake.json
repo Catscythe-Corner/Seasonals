@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "seasonals:pumpkin_puree"
+    },
+    {
+      "item": "neapolitan:vanilla_milkshake"
+    }
+  ],
+  "result": {
+    "item": "seasonals:pumpkin_milkshake"
+  }
+}

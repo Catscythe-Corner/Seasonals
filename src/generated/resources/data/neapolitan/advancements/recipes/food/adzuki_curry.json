@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_pumpkin_puree": {
+          "has_roasted_adzuki_beans": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "seasonals:pumpkin_puree"
+                    "neapolitan:roasted_adzuki_beans"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "seasonals:pumpkin_pie"
+              "recipe": "seasonals:adzuki_curry"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_pumpkin_puree",
+            "has_roasted_adzuki_beans",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "seasonals:pumpkin_pie"
+            "seasonals:adzuki_curry"
           ]
         }
       },

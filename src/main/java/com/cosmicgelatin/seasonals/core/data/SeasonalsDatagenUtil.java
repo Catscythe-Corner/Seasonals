@@ -1,10 +1,14 @@
 package com.cosmicgelatin.seasonals.core.data;
 
 import com.cosmicgelatin.seasonals.core.Seasonals;
+import com.cosmicgelatin.seasonals.core.SeasonalsConfig;
+import com.google.common.collect.Maps;
+import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ModelProvider;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.registries.ForgeRegistries;
 
 /**
@@ -43,33 +47,12 @@ public class SeasonalsDatagenUtil {
         return new ResourceLocation(ModelProvider.ITEM_FOLDER + "/" + path);
     }
 
-    public static ResourceLocation craftingPath(String name) {
-        return Seasonals.modPrefix("crafting/" + name);
+    public static ConfigValueCondition outsideRecipeConfig() {
+        return configCondition(SeasonalsConfig.COMMON.outsideRecipes, "outside_recipes", false);
     }
 
-    public static ResourceLocation smeltingPath(String name) {
-        return Seasonals.modPrefix("smelting/" + name);
+    private static ConfigValueCondition configCondition(ForgeConfigSpec.ConfigValue<?> value, String key, boolean inverted) {
+        return new ConfigValueCondition(Seasonals.modPrefix("config"), value, key, Maps.newHashMap(), inverted);
     }
 
-    public static ResourceLocation blastingPath(String name) {
-        return Seasonals.modPrefix("blasting/" + name);
-    }
-
-    public static ResourceLocation smokingPath(String name) {
-        return Seasonals.modPrefix("smoking/" + name);
-    }
-
-    public static ResourceLocation campfire_cookingPath(String name) {
-        return Seasonals.modPrefix("campfire_cooking/" + name);
-    }
-
-    public static ResourceLocation stonecuttingPath(String name) {
-        return Seasonals.modPrefix("stonecutting/" + name);
-    }
-
-    public static ResourceLocation smithingPath(String name) {
-        return Seasonals.modPrefix("smithing/" + name);
-    }
-
-    //Textures
 }

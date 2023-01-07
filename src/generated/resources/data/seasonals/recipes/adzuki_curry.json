@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "seasonals:config",
+          "value": "outside_recipes"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "neapolitan:roasted_adzuki_beans"
+          },
+          {
+            "item": "neapolitan:dried_banana"
+          },
+          {
+            "item": "minecraft:carrot"
+          },
+          {
+            "item": "seasonals:pumpkin_puree"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "neapolitan:adzuki_curry"
+        }
+      }
+    }
+  ]
+}

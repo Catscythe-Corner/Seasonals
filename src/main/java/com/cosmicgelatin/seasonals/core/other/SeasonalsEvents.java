@@ -52,8 +52,9 @@ public class SeasonalsEvents {
 
     @SubscribeEvent
     public static void onFoodEaten(LivingEntityUseItemEvent.Finish event) {
-        if (event.getItem().getItem() == Items.SWEET_BERRIES)
-        {event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));}
+        if (event.getItem().getItem() == Items.SWEET_BERRIES) {
+            event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.THORN_RESISTANCE.get(), 240));
+        }
         else if (SeasonalsConfig.COMMON.outsideEffects.get()) {
             if (event.getItem().getItem() == Items.PUMPKIN_PIE) {
                 event.getEntity().addEffect(new MobEffectInstance(SeasonalsEffects.FALL_FLAVOR.get(), 400));

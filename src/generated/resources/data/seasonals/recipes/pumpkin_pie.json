@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "seasonals:config",
+          "value": "outside_recipes"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "seasonals:pumpkin_puree"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "tag": "forge:eggs"
+          }
+        ],
+        "result": {
+          "item": "minecraft:pumpkin_pie"
+        }
+      }
+    }
+  ]
+}
