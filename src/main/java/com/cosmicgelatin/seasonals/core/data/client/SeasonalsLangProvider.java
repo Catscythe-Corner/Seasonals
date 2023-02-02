@@ -27,6 +27,10 @@ public class SeasonalsLangProvider extends LanguageProvider {
         add(SeasonalsItems.SWEET_BERRY_MILKSHAKE.get(), "Sweet Berry Milkshake");
         add(SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN.get(), "Chocolate Pumpkin Muffin");
         add(SeasonalsItems.SWEET_BERRY_VANILLA_YOGURT.get(), "Sweet Berry Vanilla Yogurt");
+        add(SeasonalsItems.GLAZED_SWEET_BERRIES.get(), "Glazed Sweet Berries");
+        add(SeasonalsItems.MIXED_BERRY_MUFFIN.get(), "Mixed Berry Muffin");
+        add(SeasonalsItems.PUMPKIN_ADZUKI_STEW.get(), "Pumpkin Adzuki Stew");
+        add(SeasonalsItems.BANANA_SPLIT_SUNDAE.get(), "Banana Split Sundae");
 
         add(SeasonalsEffects.FALL_FLAVOR.get(), "Fall Flavor");
         add(SeasonalsEffects.THORN_RESISTANCE.get(), "Thorn Resistance");

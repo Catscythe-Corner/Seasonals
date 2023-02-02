@@ -4,11 +4,51 @@
       "type": "criteria",
       "config": {
         "criteria": {
+          "seasonals:banana_split_sundae": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:banana_split_sundae"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "seasonals:chocolate_pumpkin_muffin": {
             "conditions": {
               "item": {
                 "items": [
                   "seasonals:chocolate_pumpkin_muffin"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "seasonals:glazed_sweet_berries": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:glazed_sweet_berries"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "seasonals:mixed_berry_muffin": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:mixed_berry_muffin"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "seasonals:pumpkin_adzuki_stew": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:pumpkin_adzuki_stew"
                 ]
               }
             },
@@ -90,13 +130,16 @@
             "seasonals:pumpkin_puree"
           ],
           [
-            "seasonals:rabbit_roast"
-          ],
-          [
             "seasonals:pumpkin_ice_cream"
           ],
           [
             "seasonals:pumpkin_milkshake"
+          ],
+          [
+            "seasonals:chocolate_pumpkin_muffin"
+          ],
+          [
+            "seasonals:pumpkin_adzuki_stew"
           ],
           [
             "seasonals:sweet_berry_ice_cream"
@@ -105,10 +148,19 @@
             "seasonals:sweet_berry_milkshake"
           ],
           [
-            "seasonals:chocolate_pumpkin_muffin"
+            "seasonals:glazed_sweet_berries"
           ],
           [
             "seasonals:sweet_berry_vanilla_yogurt"
+          ],
+          [
+            "seasonals:rabbit_roast"
+          ],
+          [
+            "seasonals:mixed_berry_muffin"
+          ],
+          [
+            "seasonals:banana_split_sundae"
           ]
         ],
         "should_replace_requirements": false

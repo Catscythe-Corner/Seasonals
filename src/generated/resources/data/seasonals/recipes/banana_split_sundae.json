@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "seasonals:glazed_sweet_berries"
+    },
+    {
+      "item": "neapolitan:banana"
+    },
+    {
+      "item": "neapolitan:chocolate_ice_cream"
+    }
+  ],
+  "result": {
+    "item": "seasonals:banana_split_sundae"
+  }
+}

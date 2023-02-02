@@ -33,6 +33,10 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
         basicItem(SeasonalsItems.SWEET_BERRY_MILKSHAKE);
         basicItem(SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN);
         basicItem(SeasonalsItems.SWEET_BERRY_VANILLA_YOGURT);
+        basicItem(SeasonalsItems.GLAZED_SWEET_BERRIES);
+        basicItem(SeasonalsItems.MIXED_BERRY_MUFFIN);
+        basicItem(SeasonalsItems.PUMPKIN_ADZUKI_STEW);
+        basicItem(SeasonalsItems.BANANA_SPLIT_SUNDAE);
     }
 
     private void basicItem(Supplier<? extends Item> item) {
