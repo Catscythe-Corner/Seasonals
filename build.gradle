@@ -1,12 +1,14 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
         mavenCentral()
+        maven { url = 'https://files.minecraftforge.net/maven' }
         maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 
@@ -14,8 +16,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply from: 'https://raw.githubusercontent.com/SizableShrimp/ForgeUpdatesRemapper/main/remapper.gradle'
-
+apply plugin: 'org.spongepowered.mixin'
 
 version = "${mc_version}-${mod_version}"
 group = 'com.cosmicgelatin'
@@ -87,15 +88,21 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     implementation fg.deobf("com.teamabnormals:${blueprint_id}:${mc_version}-${blueprint_version}")
     implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_id}")
 
-    //implementation fg.deobf("curse.maven:atmospheric-362393:${atmospheric_id}")
+    implementation fg.deobf("curse.maven:atmospheric-362393:${atmospheric_id}")
     implementation fg.deobf("curse.maven:berry-good-355589:${bg_id}")
-    //implementation fg.deobf("curse.maven:autumnity-365045:${autumnity_id}")
+    implementation fg.deobf("curse.maven:autumnity-365045:${autumnity_id}")
 
     implementation fg.deobf("curse.maven:jei-238222:3969039")
+}
+
+mixin {
+    add sourceSets.main, "seasonals.refmap.json"
+    config "seasonals.mixins.json"
 }
 
 jar {

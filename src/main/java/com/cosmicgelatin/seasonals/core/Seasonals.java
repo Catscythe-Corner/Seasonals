@@ -8,7 +8,7 @@ import com.cosmicgelatin.seasonals.core.data.server.SeasonalsRecipeProvider;
 import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancementModifierProvider;
 import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
-import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsLootConditions;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
@@ -49,7 +49,7 @@ public class Seasonals {
 
         REGISTRY_HELPER.register(modEventBus);
 
-        SeasonalsEffects.EFFECTS.register(modEventBus);
+        SeasonalsMobEffects.EFFECTS.register(modEventBus);
         SeasonalsLootConditions.LOOT_ITEM_CONDITION_TYPE.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SeasonalsConfig.COMMON_SPEC);

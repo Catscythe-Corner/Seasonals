@@ -1,7 +1,7 @@
 package com.cosmicgelatin.seasonals.core.data.server.modifier;
 
 import com.cosmicgelatin.seasonals.core.Seasonals;
-import com.cosmicgelatin.seasonals.core.registry.SeasonalsEffects;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.teamabnormals.blueprint.common.advancement.modification.AdvancementModifierProvider;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
@@ -34,6 +34,6 @@ public class SeasonalsAdvancementModifierProvider extends AdvancementModifierPro
         });
 
         this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(constructBalancedDiet.requirements(RequirementsStrategy.AND).build());
-        this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(SeasonalsEffects.FALL_FLAVOR.get()).and(SeasonalsEffects.THORN_RESISTANCE.get())));
+        this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(SeasonalsMobEffects.STUFFED.get()).and(SeasonalsMobEffects.THORN_RESISTANCE.get())));
     }
 }

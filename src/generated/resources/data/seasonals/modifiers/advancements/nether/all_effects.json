@@ -5,7 +5,7 @@
       "config": {
         "criteria": "all_effects",
         "effects": {
-          "seasonals:fall_flavor": {},
+          "seasonals:stuffed": {},
           "seasonals:thorn_resistance": {}
         },
         "removes": false
