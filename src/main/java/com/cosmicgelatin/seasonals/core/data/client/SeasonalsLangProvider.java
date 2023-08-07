@@ -18,6 +18,8 @@ public class SeasonalsLangProvider extends LanguageProvider {
         addBlock(SeasonalsBlocks.PUMPKIN_CAKE, "Pumpkin Cake");
         addBlock(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK, "Sweet Berry Ice Cream Block");
         addBlock(SeasonalsBlocks.SWEET_BERRY_CAKE, "Sweet Berry Cake");
+        addBlock(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK, "Beetroot Ice Cream Block");
+        addBlock(SeasonalsBlocks.BEETROOT_CAKE, "Beetroot Cake");
 
         addItem(SeasonalsItems.PUMPKIN_PUREE, "Pumpkin Puree");
         addItem(SeasonalsItems.RABBIT_ROAST, "Rabbit Roast");
@@ -31,6 +33,11 @@ public class SeasonalsLangProvider extends LanguageProvider {
         addItem(SeasonalsItems.MIXED_BERRY_MUFFIN, "Mixed Berry Muffin");
         addItem(SeasonalsItems.PUMPKIN_ADZUKI_STEW, "Pumpkin Adzuki Stew");
         addItem(SeasonalsItems.BANANA_SPLIT_SUNDAE, "Banana Split Sundae");
+        addItem(SeasonalsItems.BEETROOT_ICE_CREAM, "Beetroot Ice Cream");
+        addItem(SeasonalsItems.BEETROOT_MILKSHAKE, "Beetroot Milkshake");
+        addItem(SeasonalsItems.ROASTED_BEETROOT, "Roasted Beetroot");
+        addItem(SeasonalsItems.OXIDIZED_BEETROOT, "Oxidized Beetroot");
+        addItem(SeasonalsItems.RED_VELVET_CUPCAKE, "Red Velvet Cupcake");
 
         addEffect(SeasonalsMobEffects.STUFFED, "Stuffed");
         addEffect(SeasonalsMobEffects.THORN_RESISTANCE, "Thorn Resistance");

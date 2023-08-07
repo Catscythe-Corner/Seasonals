@@ -29,12 +29,15 @@ public class SeasonalsRecipeProvider extends RecipeProvider {
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         iceCreamAndBlockRecipe(SeasonalsItems.PUMPKIN_PUREE.get(), SeasonalsItems.PUMPKIN_ICE_CREAM, SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK, consumer);
         iceCreamAndBlockRecipe(Items.SWEET_BERRIES, SeasonalsItems.SWEET_BERRY_ICE_CREAM, SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK, consumer);
+        iceCreamAndBlockRecipe(Items.BEETROOT, SeasonalsItems.BEETROOT_ICE_CREAM, SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK, consumer);
 
         milkshakeRecipes(SeasonalsItems.PUMPKIN_PUREE.get(), SeasonalsItems.PUMPKIN_ICE_CREAM, SeasonalsItems.PUMPKIN_MILKSHAKE, consumer);
         milkshakeRecipes(Items.SWEET_BERRIES, SeasonalsItems.SWEET_BERRY_ICE_CREAM, SeasonalsItems.SWEET_BERRY_MILKSHAKE, consumer);
+        milkshakeRecipes(Items.BEETROOT, SeasonalsItems.BEETROOT_ICE_CREAM, SeasonalsItems.BEETROOT_MILKSHAKE, consumer);
 
         cakeRecipes(SeasonalsItems.PUMPKIN_PUREE.get(), SeasonalsBlocks.PUMPKIN_CAKE, consumer);
         cakeRecipes(Items.SWEET_BERRIES, SeasonalsBlocks.SWEET_BERRY_CAKE, consumer);
+        cakeRecipes(Items.BEETROOT, SeasonalsBlocks.BEETROOT_CAKE, consumer);
 
         ShapelessRecipeBuilder.shapeless(SeasonalsItems.CHOCOLATE_PUMPKIN_MUFFIN.get(), 4).requires(SeasonalsItems.PUMPKIN_PUREE.get()).requires(Items.SUGAR).requires(Items.WHEAT).requires(NeapolitanItems.CHOCOLATE_BAR.get()).unlockedBy(getHasName(NeapolitanItems.CHOCOLATE_BAR.get()), has(NeapolitanItems.CHOCOLATE_BAR.get())).save(consumer);
         ShapelessRecipeBuilder.shapeless(SeasonalsItems.RABBIT_ROAST.get()).requires(Items.COOKED_RABBIT).requires(Items.BEETROOT).requires(SeasonalsItems.PUMPKIN_PUREE.get()).unlockedBy(getHasName(Items.COOKED_RABBIT), has(Items.COOKED_RABBIT)).save(consumer);

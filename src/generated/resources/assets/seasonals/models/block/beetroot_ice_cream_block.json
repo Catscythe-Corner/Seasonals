@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "seasonals:block/beetroot_ice_cream_block"
+  }
+}

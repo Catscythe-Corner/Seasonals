@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "seasonals:block/beetroot_cake"
+    },
+    "bites=1": {
+      "model": "seasonals:block/beetroot_cake_slice1"
+    },
+    "bites=2": {
+      "model": "seasonals:block/beetroot_cake_slice2"
+    },
+    "bites=3": {
+      "model": "seasonals:block/beetroot_cake_slice3"
+    },
+    "bites=4": {
+      "model": "seasonals:block/beetroot_cake_slice4"
+    },
+    "bites=5": {
+      "model": "seasonals:block/beetroot_cake_slice5"
+    },
+    "bites=6": {
+      "model": "seasonals:block/beetroot_cake_slice6"
+    }
+  }
+}

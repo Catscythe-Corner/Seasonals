@@ -42,8 +42,10 @@ public class SeasonalsLootTableProvider extends LootTableProvider {
         protected void addTables() {
             add(SeasonalsBlocks.PUMPKIN_CAKE.get(), noDrop());
             add(SeasonalsBlocks.SWEET_BERRY_CAKE.get(), noDrop());
+            add(SeasonalsBlocks.BEETROOT_CAKE.get(), noDrop());
             dropSelf(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK.get());
             dropSelf(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get());
+            dropSelf(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK.get());
 
         }
 

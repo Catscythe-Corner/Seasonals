@@ -24,8 +24,10 @@ public class SeasonalsBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         basicBlock(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK);
         basicBlock(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK);
+        basicBlock(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK);
         modCakeBlock(SeasonalsBlocks.PUMPKIN_CAKE);
         modCakeBlock(SeasonalsBlocks.SWEET_BERRY_CAKE);
+        modCakeBlock(SeasonalsBlocks.BEETROOT_CAKE);
     }
 
     private void basicBlock(Supplier<? extends Block> block) {

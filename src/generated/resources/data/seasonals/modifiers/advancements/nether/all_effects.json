@@ -5,6 +5,7 @@
       "config": {
         "criteria": "all_effects",
         "effects": {
+          "seasonals:rooted": {},
           "seasonals:stuffed": {},
           "seasonals:thorn_resistance": {}
         },

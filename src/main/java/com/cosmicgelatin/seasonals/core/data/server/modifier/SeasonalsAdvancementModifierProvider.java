@@ -34,6 +34,6 @@ public class SeasonalsAdvancementModifierProvider extends AdvancementModifierPro
         });
 
         this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(constructBalancedDiet.requirements(RequirementsStrategy.AND).build());
-        this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(SeasonalsMobEffects.STUFFED.get()).and(SeasonalsMobEffects.THORN_RESISTANCE.get())));
+        this.entry("nether/all_effects").selects("nether/all_effects").addModifier(new EffectsChangedModifier("all_effects", false, MobEffectsPredicate.effects().and(SeasonalsMobEffects.STUFFED.get()).and(SeasonalsMobEffects.THORN_RESISTANCE.get()).and(SeasonalsMobEffects.ROOTED.get())));
     }
 }

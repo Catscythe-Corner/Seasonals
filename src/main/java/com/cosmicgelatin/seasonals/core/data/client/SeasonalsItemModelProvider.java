@@ -23,8 +23,10 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicBlockItem(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK);
         basicBlockItem(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK);
+        basicBlockItem(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK);
         generatedBlockItemWithItemTexture(SeasonalsBlocks.PUMPKIN_CAKE);
         generatedBlockItemWithItemTexture(SeasonalsBlocks.SWEET_BERRY_CAKE);
+        generatedBlockItemWithItemTexture(SeasonalsBlocks.BEETROOT_CAKE);
         basicItem(SeasonalsItems.PUMPKIN_PUREE);
         basicItem(SeasonalsItems.RABBIT_ROAST);
         basicItem(SeasonalsItems.PUMPKIN_ICE_CREAM);
@@ -37,6 +39,11 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
         basicItem(SeasonalsItems.MIXED_BERRY_MUFFIN);
         basicItem(SeasonalsItems.PUMPKIN_ADZUKI_STEW);
         basicItem(SeasonalsItems.BANANA_SPLIT_SUNDAE);
+        basicItem(SeasonalsItems.BEETROOT_ICE_CREAM);
+        basicItem(SeasonalsItems.BEETROOT_MILKSHAKE);
+        basicItem(SeasonalsItems.ROASTED_BEETROOT);
+        basicItem(SeasonalsItems.OXIDIZED_BEETROOT);
+        basicItem(SeasonalsItems.RED_VELVET_CUPCAKE);
     }
 
     private void basicItem(Supplier<? extends Item> item) {

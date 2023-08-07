@@ -63,7 +63,6 @@ public class SeasonalsEvents {
                         foodData.setExhaustion(0);
                     } else {
                         if (foodData.getFoodLevel() > 1) {
-                            System.out.println("yeee");
                             foodData.setFoodLevel(foodData.getFoodLevel() - 1);
                             foodData.setSaturation(foodData.getSaturationLevel() - 1);
                         }

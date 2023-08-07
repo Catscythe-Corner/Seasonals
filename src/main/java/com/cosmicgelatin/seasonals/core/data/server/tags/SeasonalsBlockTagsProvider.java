@@ -19,7 +19,8 @@ public class SeasonalsBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK.get(),
-                SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get()
+                SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get(),
+                SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK.get()
         );
     }
 }

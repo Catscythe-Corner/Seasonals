@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:snow_block"
+    },
+    "X": {
+      "item": "seasonals:beetroot_ice_cream"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "seasonals:beetroot_ice_cream_block"
+  }
+}
