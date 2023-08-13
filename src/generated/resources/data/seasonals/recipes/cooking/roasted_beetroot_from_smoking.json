@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "group": "roasted_beetroot",
+  "ingredient": {
+    "item": "minecraft:beetroot"
+  },
+  "result": "seasonals:roasted_beetroot"
+}

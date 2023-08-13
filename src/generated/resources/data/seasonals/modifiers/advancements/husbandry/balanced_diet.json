@@ -14,6 +14,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "seasonals:beetroot_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:beetroot_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "seasonals:beetroot_ice_cream": {
             "conditions": {
               "item": {
@@ -84,6 +94,16 @@
             },
             "trigger": "minecraft:consume_item"
           },
+          "seasonals:pumpkin_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:pumpkin_cake_slice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
           "seasonals:pumpkin_ice_cream": {
             "conditions": {
               "item": {
@@ -139,6 +159,16 @@
               "item": {
                 "items": [
                   "seasonals:roasted_beetroot"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "seasonals:sweet_berry_cake_slice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "seasonals:sweet_berry_cake_slice"
                 ]
               }
             },
@@ -226,6 +256,15 @@
           ],
           [
             "seasonals:banana_split_sundae"
+          ],
+          [
+            "seasonals:pumpkin_cake_slice"
+          ],
+          [
+            "seasonals:sweet_berry_cake_slice"
+          ],
+          [
+            "seasonals:beetroot_cake_slice"
           ]
         ],
         "should_replace_requirements": false

@@ -1,8 +1,11 @@
 package com.cosmicgelatin.seasonals.core.data.server;
 
+import com.cosmicgelatin.seasonals.common.item.SeasonalsFlavoredCandleCake;
+import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
@@ -12,6 +15,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
@@ -46,6 +50,9 @@ public class SeasonalsLootTableProvider extends LootTableProvider {
             dropSelf(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK.get());
             dropSelf(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get());
             dropSelf(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK.get());
+
+            SeasonalsFlavoredCandleCake.getCandleCakes().forEach((block -> this.add(block, createCandleCakeDrops(((FlavoredCandleCakeBlock) block).getCandle()))));
+
 
         }
 

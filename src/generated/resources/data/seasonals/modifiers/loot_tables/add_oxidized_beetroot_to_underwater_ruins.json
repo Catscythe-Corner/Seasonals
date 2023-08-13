@@ -1,0 +1,36 @@
+{
+  "modifiers": [
+    {
+      "type": "entries",
+      "config": {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "seasonals:oxidized_beetroot"
+          }
+        ],
+        "index": 0,
+        "replace": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": {
+    "type": "names",
+    "config": [
+      "minecraft:chests/underwater_ruin_small",
+      "minecraft:chests/underwater_ruin_big"
+    ]
+  }
+}

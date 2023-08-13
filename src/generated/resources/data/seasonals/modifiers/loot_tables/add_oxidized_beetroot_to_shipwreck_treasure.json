@@ -1,0 +1,31 @@
+{
+  "modifiers": [
+    {
+      "type": "entries",
+      "config": {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "functions": [
+              {
+                "add": false,
+                "count": {
+                  "type": "minecraft:uniform",
+                  "max": 1.0,
+                  "min": 0.0
+                },
+                "function": "minecraft:set_count"
+              }
+            ],
+            "name": "seasonals:oxidized_beetroot",
+            "weight": 5
+          }
+        ],
+        "index": 0,
+        "replace": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:chests/shipwreck_treasure"
+}

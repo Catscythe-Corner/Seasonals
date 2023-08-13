@@ -47,6 +47,14 @@ public class SeasonalsDatagenUtil {
         return new ResourceLocation(ModelProvider.ITEM_FOLDER + "/" + path);
     }
 
+    public static ResourceLocation craftingPath(String name) {
+        return Seasonals.modPrefix("crafting/" + name);
+    }
+
+    public static ResourceLocation cookingPath(String name) {
+        return Seasonals.modPrefix("cooking/" + name);
+    }
+
     public static ConfigValueCondition outsideRecipeConfig() {
         return configCondition(SeasonalsConfig.COMMON.outsideRecipes, "outside_recipes", false);
     }

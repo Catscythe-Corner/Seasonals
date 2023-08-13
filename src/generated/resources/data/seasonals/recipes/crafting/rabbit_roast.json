@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cooked_rabbit"
+    },
+    {
+      "item": "seasonals:roasted_beetroot"
+    },
+    {
+      "item": "seasonals:pumpkin_puree"
+    }
+  ],
+  "result": {
+    "item": "seasonals:rabbit_roast"
+  }
+}

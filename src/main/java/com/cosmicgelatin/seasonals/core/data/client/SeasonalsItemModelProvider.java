@@ -44,6 +44,9 @@ public class SeasonalsItemModelProvider extends ItemModelProvider {
         basicItem(SeasonalsItems.ROASTED_BEETROOT);
         basicItem(SeasonalsItems.OXIDIZED_BEETROOT);
         basicItem(SeasonalsItems.RED_VELVET_CUPCAKE);
+        basicItem(SeasonalsItems.PUMPKIN_CAKE_SLICE);
+        basicItem(SeasonalsItems.SWEET_BERRY_CAKE_SLICE);
+        basicItem(SeasonalsItems.BEETROOT_CAKE_SLICE);
     }
 
     private void basicItem(Supplier<? extends Item> item) {

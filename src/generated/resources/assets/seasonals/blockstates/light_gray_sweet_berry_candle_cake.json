@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "seasonals:block/light_gray_sweet_berry_candle_cake"
+    },
+    "lit=true": {
+      "model": "seasonals:block/light_gray_sweet_berry_candle_cake_lit"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:oxidized_copper"
+    },
+    "X": {
+      "item": "seasonals:roasted_beetroot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "item": "seasonals:oxidized_beetroot"
+  }
+}

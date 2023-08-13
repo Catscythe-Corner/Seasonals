@@ -6,6 +6,7 @@ import com.cosmicgelatin.seasonals.core.data.client.SeasonalsLangProvider;
 import com.cosmicgelatin.seasonals.core.data.server.SeasonalsLootTableProvider;
 import com.cosmicgelatin.seasonals.core.data.server.SeasonalsRecipeProvider;
 import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancementModifierProvider;
+import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsLootModifierProvider;
 import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
@@ -29,23 +30,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
 public class Seasonals {
     public static final String MODID = "seasonals";
-
     public static ResourceLocation modPrefix(String path) {
         return new ResourceLocation(Seasonals.MODID, path);
     }
-    public static boolean BERRY_GOOD;
-    public static boolean ATMOSPHERIC;
-    public static boolean AUTUMNITY;
-
     public static final RegistryHelper REGISTRY_HELPER = new RegistryHelper(MODID);
 
     public Seasonals() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
-
-        BERRY_GOOD = ModList.get().isLoaded("berry_good");
-        ATMOSPHERIC = ModList.get().isLoaded("atmospheric");
-        AUTUMNITY = ModList.get().isLoaded("autumnity");
 
         REGISTRY_HELPER.register(modEventBus);
 
@@ -76,6 +68,7 @@ public class Seasonals {
         generator.addProvider(includeServer, new SeasonalsLootTableProvider(generator));
         generator.addProvider(includeServer, new SeasonalsBlockTagsProvider(generator, fileHelper));
         generator.addProvider(includeServer, new SeasonalsAdvancementModifierProvider(generator));
+        generator.addProvider(includeServer, new SeasonalsLootModifierProvider(generator));
         generator.addProvider(includeServer, new SeasonalsRecipeProvider(generator));
 
     }

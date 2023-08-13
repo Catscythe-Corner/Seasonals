@@ -38,6 +38,9 @@ public class SeasonalsLangProvider extends LanguageProvider {
         addItem(SeasonalsItems.ROASTED_BEETROOT, "Roasted Beetroot");
         addItem(SeasonalsItems.OXIDIZED_BEETROOT, "Oxidized Beetroot");
         addItem(SeasonalsItems.RED_VELVET_CUPCAKE, "Red Velvet Cupcake");
+        addItem(SeasonalsItems.PUMPKIN_CAKE_SLICE, "Pumpkin Cake Slice");
+        addItem(SeasonalsItems.SWEET_BERRY_CAKE_SLICE, "Sweet Berry Cake Slice");
+        addItem(SeasonalsItems.BEETROOT_CAKE_SLICE, "Beetroot Cake Slice");
 
         addEffect(SeasonalsMobEffects.STUFFED, "Stuffed");
         addEffect(SeasonalsMobEffects.THORN_RESISTANCE, "Thorn Resistance");

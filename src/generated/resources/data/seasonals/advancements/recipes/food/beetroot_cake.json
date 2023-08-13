@@ -1,34 +1,46 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_beetroot": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:beetroot"
-            ]
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_beetroot_cake_slice": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "seasonals:beetroot_cake_slice"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "seasonals:beetroot_cake"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
-        ]
+        },
+        "requirements": [
+          [
+            "has_beetroot_cake_slice",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "seasonals:beetroot_cake"
+          ]
+        }
       },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "seasonals:beetroot_cake"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ]
     }
-  },
-  "requirements": [
-    [
-      "has_beetroot",
-      "has_the_recipe"
-    ]
-  ],
-  "rewards": {
-    "recipes": [
-      "seasonals:beetroot_cake"
-    ]
-  }
+  ]
 }

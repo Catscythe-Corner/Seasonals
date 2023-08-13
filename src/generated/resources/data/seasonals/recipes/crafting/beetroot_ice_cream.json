@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "seasonals:roasted_beetroot"
+    },
+    {
+      "tag": "forge:milk"
+    },
+    {
+      "item": "neapolitan:ice_cubes"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "seasonals:beetroot_ice_cream"
+  }
+}

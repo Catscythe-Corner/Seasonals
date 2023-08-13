@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "seasonals:block/blue_beetroot_candle_cake"
+    },
+    "lit=true": {
+      "model": "seasonals:block/blue_beetroot_candle_cake_lit"
+    }
+  }
+}

@@ -1,34 +1,46 @@
 {
-  "parent": "minecraft:recipes/root",
-  "criteria": {
-    "has_pumpkin_puree": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "seasonals:pumpkin_puree"
-            ]
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_pumpkin_cake_slice": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "seasonals:pumpkin_cake_slice"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "seasonals:pumpkin_cake"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
-        ]
+        },
+        "requirements": [
+          [
+            "has_pumpkin_cake_slice",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "seasonals:pumpkin_cake"
+          ]
+        }
       },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "seasonals:pumpkin_cake"
-      },
-      "trigger": "minecraft:recipe_unlocked"
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ]
     }
-  },
-  "requirements": [
-    [
-      "has_pumpkin_puree",
-      "has_the_recipe"
-    ]
-  ],
-  "rewards": {
-    "recipes": [
-      "seasonals:pumpkin_cake"
-    ]
-  }
+  ]
 }

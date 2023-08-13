@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "seasonals:block/lime_pumpkin_candle_cake"
+    },
+    "lit=true": {
+      "model": "seasonals:block/lime_pumpkin_candle_cake_lit"
+    }
+  }
+}

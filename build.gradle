@@ -35,6 +35,7 @@ minecraft {
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            jvmArg "-Dmixin.env.disableRefMap=true"
 
             mods {
                 seasonals {

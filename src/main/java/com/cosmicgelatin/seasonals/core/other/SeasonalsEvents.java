@@ -1,5 +1,6 @@
 package com.cosmicgelatin.seasonals.core.other;
 
+import com.cosmicgelatin.seasonals.core.ModIntegration;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.SeasonalsConfig;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
@@ -105,7 +106,7 @@ public class SeasonalsEvents {
                 if (useItem == NeapolitanItems.ADZUKI_CURRY.get()) {
                     entity.addEffect(new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 300));
                 }
-                if (Seasonals.BERRY_GOOD) {
+                if (ModIntegration.isBerryGoodLoaded()) {
                     if (useItem == BGItems.SWEET_BERRY_MINCE.get()) {
                         entity.addEffect(new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 360));
                     }
@@ -113,7 +114,7 @@ public class SeasonalsEvents {
                         entity.addEffect(new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 600));
                     }
                 }
-                if (Seasonals.AUTUMNITY) {
+                if (ModIntegration.isAutumnityLoaded()) {
                     if (useItem == AutumnityItems.PUMPKIN_BREAD.get()) {
                         entity.addEffect(new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 500));
                     }
@@ -123,6 +124,6 @@ public class SeasonalsEvents {
     }
 
     private static boolean isAtmosphericDamage(DamageSource source) {
-        return (Seasonals.ATMOSPHERIC && (source == AtmosphericDamageSources.ALOE_LEAVES || source == AtmosphericDamageSources.BARREL_CACTUS || source == AtmosphericDamageSources.YUCCA_BRANCH || source == AtmosphericDamageSources.YUCCA_FLOWER || source == AtmosphericDamageSources.YUCCA_LEAVES || source == AtmosphericDamageSources.YUCCA_SAPLING));
+        return (ModIntegration.isAtmosphericLoaded() && (source == AtmosphericDamageSources.ALOE_LEAVES || source == AtmosphericDamageSources.BARREL_CACTUS || source == AtmosphericDamageSources.YUCCA_BRANCH || source == AtmosphericDamageSources.YUCCA_FLOWER || source == AtmosphericDamageSources.YUCCA_LEAVES || source == AtmosphericDamageSources.YUCCA_SAPLING));
     }
 }

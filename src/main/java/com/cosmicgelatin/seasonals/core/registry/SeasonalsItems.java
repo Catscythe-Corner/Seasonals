@@ -1,5 +1,6 @@
 package com.cosmicgelatin.seasonals.core.registry;
 
+import com.cosmicgelatin.seasonals.common.item.CakeSliceItem;
 import com.cosmicgelatin.seasonals.common.item.SeasonalsMilkshakeItem;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
@@ -13,7 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
-
 
 @Mod.EventBusSubscriber(modid = Seasonals.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SeasonalsItems {
@@ -38,12 +38,17 @@ public class SeasonalsItems {
     public static final RegistryObject<Item> ROASTED_BEETROOT = HELPER.createItem("roasted_beetroot", () -> new Item(new Item.Properties().food(Foods.ROASTED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> OXIDIZED_BEETROOT = HELPER.createItem("oxidized_beetroot", () -> new Item(new Item.Properties().food(Foods.OXIDIZED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
 
-
     //Other Food
     public static final RegistryObject<Item> RABBIT_ROAST = HELPER.createItem("rabbit_roast", () -> new Item(new Item.Properties().food(Foods.RABBIT_ROAST).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> MIXED_BERRY_MUFFIN = HELPER.createItem("mixed_berry_muffin", () -> new Item(new Item.Properties().food(Foods.MIXED_BERRY_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> RED_VELVET_CUPCAKE = HELPER.createItem("red_velvet_cupcake", () -> new Item(new Item.Properties().food(Foods.RED_VELVET_CUPCAKE).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> BANANA_SPLIT_SUNDAE = HELPER.createItem("banana_split_sundae", () -> new Item(new Item.Properties().food(Foods.BANANA_SPLIT_SUNDAE).tab(CreativeModeTab.TAB_FOOD)));
+
+    //Cake Slices
+    public static final RegistryObject<Item> PUMPKIN_CAKE_SLICE = HELPER.createItem("pumpkin_cake_slice", () -> new CakeSliceItem(new Item.Properties().food(Foods.CAKE_SLICE), SeasonalsMobEffects.STUFFED.get(), 200));
+    public static final RegistryObject<Item> SWEET_BERRY_CAKE_SLICE = HELPER.createItem("sweet_berry_cake_slice", () -> new CakeSliceItem(new Item.Properties().food(Foods.CAKE_SLICE), SeasonalsMobEffects.THORN_RESISTANCE.get(), 200));
+    public static final RegistryObject<Item> BEETROOT_CAKE_SLICE = HELPER.createItem("beetroot_cake_slice", () -> new CakeSliceItem(new Item.Properties().food(Foods.CAKE_SLICE), SeasonalsMobEffects.ROOTED.get(), 200));
+
 
     static class Foods {//TODO probably rebalance stats and potions
         public static final FoodProperties PUMPKIN_PUREE = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.3F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 300), 1.0F).build();
@@ -64,8 +69,8 @@ public class SeasonalsItems {
         public static final FoodProperties BEETROOT_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1600), 1.0F).build();
         public static final FoodProperties BEETROOT_MILKSHAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
         public static final FoodProperties BEETROOT_CAKE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 200), 1.0F).build();
-        public static final FoodProperties OXIDIZED_BEETROOT = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1600, 1), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1400, 1), 1.0F).effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 0), 1.0F).build();
+        public static final FoodProperties OXIDIZED_BEETROOT = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.8F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1600, 1), 0.5F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1400, 3), 1.0F).effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 2), 1.0F).build();
         public static final FoodProperties RED_VELVET_CUPCAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.2F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 200), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.VANILLA_SCENT.get(), 200), 1.0F).build();
-
+        public static final FoodProperties CAKE_SLICE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1f).fast().effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0, false, false), 1.0F).build();
     }
 }
