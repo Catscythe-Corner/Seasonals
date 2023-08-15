@@ -2,8 +2,6 @@ package com.cosmicgelatin.seasonals.common.potion;
 
 import com.teamabnormals.blueprint.common.effect.BlueprintMobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 

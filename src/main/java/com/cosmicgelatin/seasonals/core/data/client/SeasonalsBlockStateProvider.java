@@ -5,7 +5,6 @@ import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -13,7 +12,6 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Function;
 import java.util.function.Supplier;

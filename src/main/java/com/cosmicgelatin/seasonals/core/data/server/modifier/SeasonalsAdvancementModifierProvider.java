@@ -1,8 +1,8 @@
 package com.cosmicgelatin.seasonals.core.data.server.modifier;
 
 import com.cosmicgelatin.seasonals.core.Seasonals;
-import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import com.teamabnormals.blueprint.common.advancement.modification.AdvancementModifierProvider;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.EffectsChangedModifier;

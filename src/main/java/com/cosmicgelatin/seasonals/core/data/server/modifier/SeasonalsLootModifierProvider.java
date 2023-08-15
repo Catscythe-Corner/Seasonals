@@ -15,7 +15,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.function.Supplier;
 
 public class SeasonalsLootModifierProvider extends LootModifierProvider {

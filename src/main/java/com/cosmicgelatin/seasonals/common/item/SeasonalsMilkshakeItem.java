@@ -16,6 +16,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -65,6 +67,8 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
         ImmutableList<MobEffectInstance> userEffects = ImmutableList.copyOf(user.getActiveEffects());
         RandomSource randomSource = user.getRandom();
 
+        LivingEntity nearest = user.level.getNearestEntity(LivingEntity.class, TargetingConditions.DEFAULT.selector((living) -> living != user), user, user.getX(), user.getY(), user.getZ(), user.getBoundingBox().inflate(6.0, 2.0, 6.0));
+
         if (userEffects.size() != 0) {
             /**
              * Changes the duration of the active effects to a conditional random value.
@@ -89,6 +93,15 @@ public class SeasonalsMilkshakeItem extends DrinkItem {
                     if (effect.getEffect() != MobEffects.BAD_OMEN && effect.getEffect() != MobEffects.HERO_OF_THE_VILLAGE) {
                         user.removeEffect(effect.getEffect());
                         user.addEffect(new MobEffectInstance(effect.getEffect(), effect.getDuration(), randomSource.nextInt(3)));
+                    }
+                }
+            }
+
+            //Removes effects of nearby hostile mobs
+            else if (this == SeasonalsItems.BEETROOT_MILKSHAKE.get()) {
+                if (nearest != null) {
+                    if (nearest instanceof Monster) {
+                        nearest.removeAllEffects();
                     }
                 }
             }

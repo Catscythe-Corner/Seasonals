@@ -2,8 +2,8 @@ package com.cosmicgelatin.seasonals.core.data.client;
 
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
-import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
+import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 

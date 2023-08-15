@@ -9,7 +9,7 @@ displayName="Seasonals"
 logoFile="seasonals.png"
 credits="Thanks to Team Abnormals for creating Neapolitan."
 authors="Uraneptus, EltrutLikes, cosmicgelatin"
-description='''Addon for Neapolitan that adds seasonal flavors, including pumpkin and sweet berry.'''
+description='''Addon for Neapolitan that adds seasonal flavors, including pumpkin, beetroot and sweet berry.'''
 
 [[dependencies.seasonals]]
     modId="forge"

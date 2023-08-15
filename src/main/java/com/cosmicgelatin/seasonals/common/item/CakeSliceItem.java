@@ -1,7 +1,6 @@
 package com.cosmicgelatin.seasonals.common.item;
 
 import com.cosmicgelatin.seasonals.core.ModIntegration;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;

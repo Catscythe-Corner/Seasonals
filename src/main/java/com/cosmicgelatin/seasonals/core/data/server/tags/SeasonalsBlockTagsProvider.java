@@ -3,7 +3,6 @@ package com.cosmicgelatin.seasonals.core.data.server.tags;
 import com.cosmicgelatin.seasonals.common.item.SeasonalsFlavoredCandleCake;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
-import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
