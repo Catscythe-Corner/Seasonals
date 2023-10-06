@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pumpkin_puree": {
+    "has_pumpkin_ice_cream": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seasonals:pumpkin_puree"
+              "seasonals:pumpkin_ice_cream"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_pumpkin_puree",
+      "has_pumpkin_ice_cream",
       "has_the_recipe"
     ]
   ],

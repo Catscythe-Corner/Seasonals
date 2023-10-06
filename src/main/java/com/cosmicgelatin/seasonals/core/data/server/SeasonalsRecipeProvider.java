@@ -34,9 +34,9 @@ public class SeasonalsRecipeProvider extends RecipeProvider {
         iceCreamAndBlockRecipe(Items.SWEET_BERRIES, SeasonalsItems.SWEET_BERRY_ICE_CREAM, SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK, consumer);
         iceCreamAndBlockRecipe(SeasonalsItems.ROASTED_BEETROOT.get(), SeasonalsItems.BEETROOT_ICE_CREAM, SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK, consumer);
 
-        milkshakeRecipes(SeasonalsItems.PUMPKIN_PUREE.get(), SeasonalsItems.PUMPKIN_ICE_CREAM, SeasonalsItems.PUMPKIN_MILKSHAKE, consumer);
-        milkshakeRecipes(Items.SWEET_BERRIES, SeasonalsItems.SWEET_BERRY_ICE_CREAM, SeasonalsItems.SWEET_BERRY_MILKSHAKE, consumer);
-        milkshakeRecipes(SeasonalsItems.ROASTED_BEETROOT.get(), SeasonalsItems.BEETROOT_ICE_CREAM, SeasonalsItems.BEETROOT_MILKSHAKE, consumer);
+        milkshakeRecipes(SeasonalsItems.PUMPKIN_ICE_CREAM, SeasonalsItems.PUMPKIN_MILKSHAKE, consumer);
+        milkshakeRecipes(SeasonalsItems.SWEET_BERRY_ICE_CREAM, SeasonalsItems.SWEET_BERRY_MILKSHAKE, consumer);
+        milkshakeRecipes(SeasonalsItems.BEETROOT_ICE_CREAM, SeasonalsItems.BEETROOT_MILKSHAKE, consumer);
 
         cakeRecipes(SeasonalsItems.PUMPKIN_PUREE.get(), SeasonalsBlocks.PUMPKIN_CAKE, SeasonalsItems.PUMPKIN_CAKE_SLICE, consumer);
         cakeRecipes(Items.SWEET_BERRIES, SeasonalsBlocks.SWEET_BERRY_CAKE, SeasonalsItems.SWEET_BERRY_CAKE_SLICE, consumer);
@@ -73,16 +73,10 @@ public class SeasonalsRecipeProvider extends RecipeProvider {
                 .unlockedBy(getHasName(resultItem.get()), has(resultItem.get())).save(consumer, craftingPath(getItemName(resultBlock.get())));
     }
 
-    private void milkshakeRecipes(ItemLike ingredient, Supplier<? extends ItemLike> iceCream, Supplier<? extends ItemLike> result, Consumer<FinishedRecipe> consumer) {
+    private void milkshakeRecipes(Supplier<? extends ItemLike> iceCream, Supplier<? extends ItemLike> result, Consumer<FinishedRecipe> consumer) {
         String resultName = getItemName(result.get());
-        ShapelessRecipeBuilder.shapeless(result.get(), 3).requires(Items.GLASS_BOTTLE, 3).requires(ingredient).requires(NeapolitanItems.VANILLA_ICE_CREAM.get()).requires(SeasonalsItemTags.MILK)
-                .unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, craftingPath(resultName));
-
-        ShapelessRecipeBuilder.shapeless(result.get(), 3).requires(Items.GLASS_BOTTLE, 3).requires(iceCream.get()).requires(NeapolitanItems.DRIED_VANILLA_PODS.get()).requires(SeasonalsItemTags.MILK)
-                .unlockedBy(getHasName(iceCream.get()), has(iceCream.get())).save(consumer, craftingPath(resultName + "_from_ice_cream"));
-
-        ShapelessRecipeBuilder.shapeless(result.get()).requires(ingredient).requires(NeapolitanItems.VANILLA_MILKSHAKE.get())
-                        .unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, craftingPath(resultName + "_from_vanilla_milkshake"));
+        ShapelessRecipeBuilder.shapeless(result.get(), 3).requires(Items.GLASS_BOTTLE, 3).requires(iceCream.get()).requires(SeasonalsItemTags.MILK)
+                .unlockedBy(getHasName(iceCream.get()), has(iceCream.get())).save(consumer, craftingPath(resultName));
     }
 
     private void cakeRecipes(ItemLike ingredient, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> slice, Consumer<FinishedRecipe> consumer) {

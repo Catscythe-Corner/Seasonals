@@ -11,10 +11,7 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "item": "minecraft:sweet_berries"
-    },
-    {
-      "item": "neapolitan:vanilla_ice_cream"
+      "item": "seasonals:sweet_berry_ice_cream"
     },
     {
       "tag": "forge:milk"

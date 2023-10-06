@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_roasted_beetroot": {
+    "has_beetroot_ice_cream": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seasonals:roasted_beetroot"
+              "seasonals:beetroot_ice_cream"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_roasted_beetroot",
+      "has_beetroot_ice_cream",
       "has_the_recipe"
     ]
   ],

@@ -23,6 +23,11 @@ public class SeasonalsBlockTagsProvider extends BlockTagsProvider {
                 SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get(),
                 SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK.get()
         );
+        tag(BlockTags.CAULDRONS).add(
+                SeasonalsBlocks.PUMPKIN_MILKSHAKE_CAULDRON.get(),
+                SeasonalsBlocks.SWEET_BERRY_MILKSHAKE_CAULDRON.get(),
+                SeasonalsBlocks.BEETROOT_MILKSHAKE_CAULDRON.get()
+        );
 
         SeasonalsFlavoredCandleCake.getCandleCakes().forEach((block -> this.tag(BlockTags.CANDLE_CAKES).add(block)));
 

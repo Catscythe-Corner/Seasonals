@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sweet_berries": {
+    "has_sweet_berry_ice_cream": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:sweet_berries"
+              "seasonals:sweet_berry_ice_cream"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_sweet_berries",
+      "has_sweet_berry_ice_cream",
       "has_the_recipe"
     ]
   ],

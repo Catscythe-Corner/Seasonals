@@ -1,9 +1,11 @@
 package com.cosmicgelatin.seasonals.core.registry;
 
 import com.cosmicgelatin.seasonals.common.item.CakeSliceItem;
-import com.cosmicgelatin.seasonals.common.item.SeasonalsMilkshakeItem;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import com.teamabnormals.neapolitan.common.item.IceCreamItem;
+import com.teamabnormals.neapolitan.common.item.MilkshakeItem;
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -21,20 +23,20 @@ public class SeasonalsItems {
 
     //Pumpkin Flavor
     public static final RegistryObject<Item> PUMPKIN_PUREE = HELPER.createItem("pumpkin_puree", () -> new Item(new Item.Properties().food(Foods.PUMPKIN_PUREE).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = HELPER.createItem("pumpkin_ice_cream", () -> new BowlFoodItem(new Item.Properties().food(Foods.PUMPKIN_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_MILKSHAKE = HELPER.createItem("pumpkin_milkshake", () -> new SeasonalsMilkshakeItem(new Item.Properties().food(Foods.PUMPKIN_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = HELPER.createItem("pumpkin_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.PUMPKIN_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> PUMPKIN_MILKSHAKE = HELPER.createItem("pumpkin_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.PUMPKIN_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> CHOCOLATE_PUMPKIN_MUFFIN = HELPER.createItem("chocolate_pumpkin_muffin", () -> new Item(new Item.Properties().food(Foods.CHOCOLATE_PUMPKIN_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> PUMPKIN_ADZUKI_STEW = HELPER.createItem("pumpkin_adzuki_stew", () -> new BowlFoodItem(new Item.Properties().food(Foods.PUMPKIN_ADZUKI_STEW).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
 
     //Sweet Berry Flavor
-    public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = HELPER.createItem("sweet_berry_ice_cream", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> SWEET_BERRY_MILKSHAKE = HELPER.createItem("sweet_berry_milkshake", () -> new SeasonalsMilkshakeItem(new Item.Properties().food(Foods.SWEET_BERRY_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = HELPER.createItem("sweet_berry_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.SWEET_BERRY_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> SWEET_BERRY_MILKSHAKE = HELPER.createItem("sweet_berry_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.SWEET_BERRY_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> GLAZED_SWEET_BERRIES = HELPER.createItem("glazed_sweet_berries", () -> new Item(new Item.Properties().food(Foods.GLAZED_SWEET_BERRIES).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> SWEET_BERRY_VANILLA_YOGURT = HELPER.createItem("sweet_berry_vanilla_yogurt", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_VANILLA_YOGURT).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
 
     //Beetroot Flavor
-    public static final RegistryObject<Item> BEETROOT_ICE_CREAM = HELPER.createItem("beetroot_ice_cream", () -> new BowlFoodItem(new Item.Properties().food(Foods.BEETROOT_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> BEETROOT_MILKSHAKE = HELPER.createItem("beetroot_milkshake", () -> new SeasonalsMilkshakeItem(new Item.Properties().food(Foods.BEETROOT_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> BEETROOT_ICE_CREAM = HELPER.createItem("beetroot_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.BEETROOT_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> BEETROOT_MILKSHAKE = HELPER.createItem("beetroot_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.BEETROOT_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> ROASTED_BEETROOT = HELPER.createItem("roasted_beetroot", () -> new Item(new Item.Properties().food(Foods.ROASTED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> OXIDIZED_BEETROOT = HELPER.createItem("oxidized_beetroot", () -> new Item(new Item.Properties().food(Foods.OXIDIZED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
 
@@ -52,22 +54,22 @@ public class SeasonalsItems {
 
     static class Foods {//TODO probably rebalance stats and potions
         public static final FoodProperties PUMPKIN_PUREE = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.3F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 300), 1.0F).build();
-        public static final FoodProperties PUMPKIN_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 1600), 1.0F).build();
-        public static final FoodProperties PUMPKIN_MILKSHAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
+        public static final FoodProperties PUMPKIN_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 1600), 1.0F).build();
+        public static final FoodProperties PUMPKIN_MILKSHAKE = NeapolitanItems.NeapolitanFoods.createMilkshake(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 400)).build();
         public static final FoodProperties PUMPKIN_CAKE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 200), 1.0F).build();
         public static final FoodProperties CHOCOLATE_PUMPKIN_MUFFIN = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.3F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 200), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.SUGAR_RUSH.get(), 100), 1.0F).build();
         public static final FoodProperties RABBIT_ROAST = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.6F).meat().effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 320), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 720, 1), 1.0F).build();
         public static final FoodProperties PUMPKIN_ADZUKI_STEW = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.6F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.STUFFED.get(), 700), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.HARMONY.get(), 400), 1.0F).build();
-        public static final FoodProperties SWEET_BERRY_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 1800), 1.0F).build();
-        public static final FoodProperties SWEET_BERRY_MILKSHAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
+        public static final FoodProperties SWEET_BERRY_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 1800), 1.0F).build();
+        public static final FoodProperties SWEET_BERRY_MILKSHAKE = NeapolitanItems.NeapolitanFoods.createMilkshake(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 800)).build();
         public static final FoodProperties SWEET_BERRY_CAKE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 200), 1.0F).build();
         public static final FoodProperties SWEET_BERRY_VANILLA_YOGURT = (new FoodProperties.Builder()).nutrition(6).saturationMod(1.2F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 720), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.VANILLA_SCENT.get(), 200), 1.0F).build();
         public static final FoodProperties GLAZED_SWEET_BERRIES = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.2F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 720), 1.0F).build();
         public static final FoodProperties MIXED_BERRY_MUFFIN = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.2F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 200), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.SUGAR_RUSH.get(), 100), 1.0F).build();
         public static final FoodProperties BANANA_SPLIT_SUNDAE = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.4F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.THORN_RESISTANCE.get(), 720), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.SUGAR_RUSH.get(), 720), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.AGILITY.get(), 720), 1.0F).build();
         public static final FoodProperties ROASTED_BEETROOT = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 300), 1.0F).build();
-        public static final FoodProperties BEETROOT_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1600), 1.0F).build();
-        public static final FoodProperties BEETROOT_MILKSHAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.6F).build();
+        public static final FoodProperties BEETROOT_ICE_CREAM = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.42F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1600), 1.0F).build();
+        public static final FoodProperties BEETROOT_MILKSHAKE = NeapolitanItems.NeapolitanFoods.createMilkshake(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 300)).build();
         public static final FoodProperties BEETROOT_CAKE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 200), 1.0F).build();
         public static final FoodProperties OXIDIZED_BEETROOT = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.8F).effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 1600, 1), 0.5F).effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 1400, 3), 1.0F).effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1600, 2), 1.0F).build();
         public static final FoodProperties RED_VELVET_CUPCAKE = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.2F).fast().effect(() -> new MobEffectInstance(SeasonalsMobEffects.ROOTED.get(), 200), 1.0F).effect(() -> new MobEffectInstance(NeapolitanMobEffects.VANILLA_SCENT.get(), 200), 1.0F).build();

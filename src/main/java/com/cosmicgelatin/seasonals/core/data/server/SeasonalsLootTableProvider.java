@@ -10,6 +10,7 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
@@ -48,6 +49,9 @@ public class SeasonalsLootTableProvider extends LootTableProvider {
             dropSelf(SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK.get());
             dropSelf(SeasonalsBlocks.SWEET_BERRY_ICE_CREAM_BLOCK.get());
             dropSelf(SeasonalsBlocks.BEETROOT_ICE_CREAM_BLOCK.get());
+            this.dropOther(SeasonalsBlocks.PUMPKIN_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
+            this.dropOther(SeasonalsBlocks.SWEET_BERRY_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
+            this.dropOther(SeasonalsBlocks.BEETROOT_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
 
             SeasonalsFlavoredCandleCake.getCandleCakes().forEach((block -> this.add(block, createCandleCakeDrops(((FlavoredCandleCakeBlock) block).getCandle()))));
 

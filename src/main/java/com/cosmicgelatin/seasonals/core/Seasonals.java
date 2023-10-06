@@ -8,6 +8,8 @@ import com.cosmicgelatin.seasonals.core.data.server.SeasonalsRecipeProvider;
 import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsAdvancementModifierProvider;
 import com.cosmicgelatin.seasonals.core.data.server.modifier.SeasonalsLootModifierProvider;
 import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsBlockTagsProvider;
+import com.cosmicgelatin.seasonals.core.data.server.tags.SeasonalsItemTagsProvider;
+import com.cosmicgelatin.seasonals.core.other.SeasonalsCauldronInteractions;
 import com.cosmicgelatin.seasonals.core.other.SeasonalsCompat;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsLootConditions;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
@@ -50,7 +52,10 @@ public class Seasonals {
     }
 
     private void setupCommon(final FMLCommonSetupEvent event) {
-        event.enqueueWork(SeasonalsCompat::registerCompostables);
+        event.enqueueWork(() -> {
+           SeasonalsCompat.registerCompostables();
+           SeasonalsCauldronInteractions.registerCauldronInteractions();
+        });
     }
 
     @SubscribeEvent
@@ -65,7 +70,9 @@ public class Seasonals {
         generator.addProvider(includeClient, new SeasonalsLangProvider(generator));
 
         generator.addProvider(includeServer, new SeasonalsLootTableProvider(generator));
-        generator.addProvider(includeServer, new SeasonalsBlockTagsProvider(generator, fileHelper));
+        SeasonalsBlockTagsProvider blockTagsProvider = new SeasonalsBlockTagsProvider(generator, fileHelper);
+        generator.addProvider(includeServer, blockTagsProvider);
+        generator.addProvider(includeServer, new SeasonalsItemTagsProvider(generator, blockTagsProvider, fileHelper));
         generator.addProvider(includeServer, new SeasonalsAdvancementModifierProvider(generator));
         generator.addProvider(includeServer, new SeasonalsLootModifierProvider(generator));
         generator.addProvider(includeServer, new SeasonalsRecipeProvider(generator));

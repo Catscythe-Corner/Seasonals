@@ -11,10 +11,7 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "item": "seasonals:pumpkin_puree"
-    },
-    {
-      "item": "neapolitan:vanilla_ice_cream"
+      "item": "seasonals:pumpkin_ice_cream"
     },
     {
       "tag": "forge:milk"
