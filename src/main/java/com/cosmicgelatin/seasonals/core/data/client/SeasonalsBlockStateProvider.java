@@ -6,6 +6,7 @@ import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -32,6 +33,9 @@ public class SeasonalsBlockStateProvider extends BlockStateProvider {
         modCakeBlock(SeasonalsBlocks.PUMPKIN_CAKE);
         modCakeBlock(SeasonalsBlocks.SWEET_BERRY_CAKE);
         modCakeBlock(SeasonalsBlocks.BEETROOT_CAKE);
+        milkshakeCauldron(SeasonalsBlocks.PUMPKIN_MILKSHAKE_CAULDRON);
+        milkshakeCauldron(SeasonalsBlocks.BEETROOT_MILKSHAKE_CAULDRON);
+        milkshakeCauldron(SeasonalsBlocks.SWEET_BERRY_MILKSHAKE_CAULDRON);
 
         SeasonalsFlavoredCandleCake.getCandleCakes().forEach((block -> this.candleCake((FlavoredCandleCakeBlock) block)));
     }
@@ -86,5 +90,29 @@ public class SeasonalsBlockStateProvider extends BlockStateProvider {
 
     public void candleCakeBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         this.getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).build());
+    }
+
+    public void milkshakeCauldron(Supplier<Block> block) {
+        getVariantBuilder(block.get()).forAllStates(blockState -> {
+            String cauldron = name(Blocks.CAULDRON);
+            int level = blockState.getValue(BlockStateProperties.LEVEL_CAULDRON);
+            String templateSuffix = switch (level) {
+                case 1 -> "_level1";
+                case 2 -> "_level2";
+                case 3 -> "_full";
+                default -> "";
+            };
+
+            ModelFile modelFile = models().withExistingParent(name(block.get()) + templateSuffix, vanillaBlockLocation("template_cauldron" + templateSuffix))
+                   .texture("content", modBlockLocation(name(block.get()) + "_content"))
+                   .texture("inside", vanillaBlockLocation(cauldron + "_side"))
+                   .texture("particle", vanillaBlockLocation(cauldron + "_inner"))
+                   .texture("top", vanillaBlockLocation(cauldron + "_top"))
+                   .texture("bottom", vanillaBlockLocation(cauldron + "_bottom"))
+                   .texture("side", vanillaBlockLocation(cauldron + "_side"));
+
+            return ConfiguredModel.builder().modelFile(modelFile).build();
+        });
+
     }
 }
