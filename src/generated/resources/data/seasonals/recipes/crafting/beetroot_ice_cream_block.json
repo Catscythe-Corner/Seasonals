@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "key": {
     "#": {
       "item": "minecraft:snow_block"
@@ -16,5 +17,6 @@
   "result": {
     "count": 8,
     "item": "seasonals:beetroot_ice_cream_block"
-  }
+  },
+  "show_notification": true
 }

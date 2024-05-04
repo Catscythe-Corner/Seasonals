@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/glazed_sweet_berries"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

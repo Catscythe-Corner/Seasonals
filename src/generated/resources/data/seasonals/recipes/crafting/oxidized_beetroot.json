@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
     "#": {
       "item": "minecraft:oxidized_copper"
@@ -15,5 +16,6 @@
   ],
   "result": {
     "item": "seasonals:oxidized_beetroot"
-  }
+  },
+  "show_notification": true
 }

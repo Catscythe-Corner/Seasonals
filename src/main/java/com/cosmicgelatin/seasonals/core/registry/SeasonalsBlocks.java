@@ -6,7 +6,6 @@ import com.cosmicgelatin.seasonals.core.other.SeasonalsCauldronInteractions;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.neapolitan.common.block.FlavoredCakeBlock;
 import com.teamabnormals.neapolitan.common.block.MilkshakeCauldronBlock;
-import com.teamabnormals.neapolitan.core.other.NeapolitanCauldronInteractions;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DyeColor;
@@ -14,8 +13,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -28,8 +27,8 @@ public class SeasonalsBlocks {
 
     //PUMPKIN
     public static final RegistryObject<Block> PUMPKIN_MILKSHAKE_CAULDRON = HELPER.createBlockNoItem("pumpkin_milkshake_cauldron", () -> new MilkshakeCauldronBlock(SeasonalsCauldronInteractions.PUMPKIN_MILKSHAKE.map()));
-    public static final RegistryObject<Block> PUMPKIN_ICE_CREAM_BLOCK = HELPER.createBlock("pumpkin_ice_cream_block", () -> new Block(Properties.PUMPKIN_ICE_CREAM_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> PUMPKIN_CAKE = HELPER.createBlock("pumpkin_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.PUMPKIN_CAKE, Properties.PUMPKIN_CAKE), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_FOOD));
+    public static final RegistryObject<Block> PUMPKIN_ICE_CREAM_BLOCK = HELPER.createBlock("pumpkin_ice_cream_block", () -> new Block(Properties.PUMPKIN_ICE_CREAM_BLOCK));
+    public static final RegistryObject<Block> PUMPKIN_CAKE = HELPER.createBlock("pumpkin_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.PUMPKIN_CAKE, Properties.PUMPKIN_CAKE), new Item.Properties().stacksTo(1));
     public static final RegistryObject<Block> PUMPKIN_CANDLE_CAKE = createCandleCakeBlock("pumpkin", false, DyeColor.WHITE, Properties.PUMPKIN_CAKE);
     public static final RegistryObject<Block> WHITE_PUMPKIN_CANDLE_CAKE = createCandleCakeBlock("pumpkin", true, DyeColor.WHITE, Properties.PUMPKIN_CAKE);
     public static final RegistryObject<Block> ORANGE_PUMPKIN_CANDLE_CAKE = createCandleCakeBlock("pumpkin", true, DyeColor.ORANGE, Properties.PUMPKIN_CAKE);
@@ -50,8 +49,8 @@ public class SeasonalsBlocks {
 
     //SWEET BERRY
     public static final RegistryObject<Block> SWEET_BERRY_MILKSHAKE_CAULDRON = HELPER.createBlockNoItem("sweet_berry_milkshake_cauldron", () -> new MilkshakeCauldronBlock(SeasonalsCauldronInteractions.SWEET_BERRY_MILKSHAKE.map()));
-    public static final RegistryObject<Block> SWEET_BERRY_ICE_CREAM_BLOCK = HELPER.createBlock("sweet_berry_ice_cream_block", () -> new Block(Properties.SWEET_BERRY_ICE_CREAM_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> SWEET_BERRY_CAKE = HELPER.createBlock("sweet_berry_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.SWEET_BERRY_CAKE, Properties.SWEET_BERRY_CAKE), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_FOOD));
+    public static final RegistryObject<Block> SWEET_BERRY_ICE_CREAM_BLOCK = HELPER.createBlock("sweet_berry_ice_cream_block", () -> new Block(Properties.SWEET_BERRY_ICE_CREAM_BLOCK));
+    public static final RegistryObject<Block> SWEET_BERRY_CAKE = HELPER.createBlock("sweet_berry_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.SWEET_BERRY_CAKE, Properties.SWEET_BERRY_CAKE), new Item.Properties().stacksTo(1));
     public static final RegistryObject<Block> SWEET_BERRY_CANDLE_CAKE = createCandleCakeBlock("sweet_berry", false, DyeColor.WHITE, Properties.SWEET_BERRY_CAKE);
     public static final RegistryObject<Block> WHITE_SWEET_BERRY_CANDLE_CAKE = createCandleCakeBlock("sweet_berry", true, DyeColor.WHITE, Properties.SWEET_BERRY_CAKE);
     public static final RegistryObject<Block> ORANGE_SWEET_BERRY_CANDLE_CAKE = createCandleCakeBlock("sweet_berry", true, DyeColor.ORANGE, Properties.SWEET_BERRY_CAKE);
@@ -72,8 +71,8 @@ public class SeasonalsBlocks {
 
     //BEETROOT
     public static final RegistryObject<Block> BEETROOT_MILKSHAKE_CAULDRON = HELPER.createBlockNoItem("beetroot_milkshake_cauldron", () -> new MilkshakeCauldronBlock(SeasonalsCauldronInteractions.BEETROOT_MILKSHAKE.map()));
-    public static final RegistryObject<Block> BEETROOT_ICE_CREAM_BLOCK = HELPER.createBlock("beetroot_ice_cream_block", () -> new Block(Properties.BEETROOT_ICE_CREAM_BLOCK), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> BEETROOT_CAKE = HELPER.createBlock("beetroot_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.BEETROOT_CAKE, Properties.BEETROOT_CAKE), new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_FOOD));
+    public static final RegistryObject<Block> BEETROOT_ICE_CREAM_BLOCK = HELPER.createBlock("beetroot_ice_cream_block", () -> new Block(Properties.BEETROOT_ICE_CREAM_BLOCK));
+    public static final RegistryObject<Block> BEETROOT_CAKE = HELPER.createBlock("beetroot_cake", () -> new FlavoredCakeBlock(SeasonalsItems.Foods.BEETROOT_CAKE, Properties.BEETROOT_CAKE), new Item.Properties().stacksTo(1));
     public static final RegistryObject<Block> BEETROOT_CANDLE_CAKE = createCandleCakeBlock("beetroot", false, DyeColor.WHITE, Properties.BEETROOT_CAKE);
     public static final RegistryObject<Block> WHITE_BEETROOT_CANDLE_CAKE = createCandleCakeBlock("beetroot", true, DyeColor.WHITE, Properties.BEETROOT_CAKE);
     public static final RegistryObject<Block> ORANGE_BEETROOT_CANDLE_CAKE = createCandleCakeBlock("beetroot", true, DyeColor.ORANGE, Properties.BEETROOT_CAKE);
@@ -103,14 +102,14 @@ public class SeasonalsBlocks {
     }
 
     static class Properties {
-        public static final Block.Properties PUMPKIN_ICE_CREAM_BLOCK = Block.Properties.of(Material.SNOW, MaterialColor.TERRACOTTA_YELLOW).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
-        public static final Block.Properties PUMPKIN_CAKE = Block.Properties.of(Material.CAKE, MaterialColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.WOOL);
+        public static final Block.Properties PUMPKIN_ICE_CREAM_BLOCK = Block.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).instrument(NoteBlockInstrument.CHIME).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
+        public static final Block.Properties PUMPKIN_CAKE = Block.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).strength(0.5F).sound(SoundType.WOOL);
 
-        public static final Block.Properties SWEET_BERRY_ICE_CREAM_BLOCK = Block.Properties.of(Material.SNOW, MaterialColor.COLOR_MAGENTA).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
-        public static final Block.Properties SWEET_BERRY_CAKE = Block.Properties.of(Material.CAKE, MaterialColor.TERRACOTTA_RED).strength(0.5F).sound(SoundType.WOOL);
+        public static final Block.Properties SWEET_BERRY_ICE_CREAM_BLOCK = Block.Properties.of().mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.CHIME).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
+        public static final Block.Properties SWEET_BERRY_CAKE = Block.Properties.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.5F).sound(SoundType.WOOL);
 
-        public static final Block.Properties BEETROOT_ICE_CREAM_BLOCK = Block.Properties.of(Material.SNOW, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
-        public static final Block.Properties BEETROOT_CAKE = Block.Properties.of(Material.CAKE, MaterialColor.COLOR_RED).strength(0.5F).sound(SoundType.WOOL);
+        public static final Block.Properties BEETROOT_ICE_CREAM_BLOCK = Block.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.CHIME).requiresCorrectToolForDrops().strength(0.2F).sound(SoundType.SNOW);
+        public static final Block.Properties BEETROOT_CAKE = Block.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.5F).sound(SoundType.WOOL);
 
     }
 }

@@ -14,7 +14,7 @@ public class CakeSliceItem extends Item {
     private final int duartion;
 
     public CakeSliceItem(Properties pProperties, MobEffect effect, int duartion) {
-        super(ModIntegration.isFDLoaded() ? pProperties.tab(CreativeModeTab.TAB_FOOD) : pProperties);
+        super(pProperties);
         this.effect = effect;
         this.duartion = duartion;
     }

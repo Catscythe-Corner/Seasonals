@@ -3,20 +3,23 @@ package com.cosmicgelatin.seasonals.core.data.server.tags;
 import com.cosmicgelatin.seasonals.common.item.SeasonalsFlavoredCandleCake;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.CompletableFuture;
+
 public class SeasonalsBlockTagsProvider extends BlockTagsProvider {
 
-    public SeasonalsBlockTagsProvider(DataGenerator pGenerator, @Nullable ExistingFileHelper existingFileHelper) {
-        super(pGenerator, Seasonals.MODID, existingFileHelper);
+    public SeasonalsBlockTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+        super(packOutput, lookupProvider, Seasonals.MODID, existingFileHelper);
     }
 
     @Override
-    public void addTags() {
+    public void addTags(HolderLookup.Provider provider) {
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 SeasonalsBlocks.PUMPKIN_ICE_CREAM_BLOCK.get(),

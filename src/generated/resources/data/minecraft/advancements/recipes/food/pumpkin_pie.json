@@ -33,7 +33,8 @@
           "recipes": [
             "seasonals:pumpkin_pie"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

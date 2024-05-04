@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/banana_split_sundae"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

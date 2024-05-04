@@ -6,13 +6,11 @@ import com.cosmicgelatin.seasonals.core.SeasonalsConfig;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
-import com.teamabnormals.atmospheric.core.other.AtmosphericDamageSources;
 import com.teamabnormals.autumnity.core.registry.AutumnityItems;
 import com.teamabnormals.berry_good.core.registry.BGItems;
 import com.teamabnormals.blueprint.core.util.TradeUtil;
 import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -30,16 +28,19 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = Seasonals.MODID)
 public class SeasonalsEvents {
 
-    //This can be made data-driven in 1.19.4+
     @SubscribeEvent
     public static void onEntityAttacked(LivingAttackEvent event) {
         LivingEntity entityLiving = event.getEntity();
         DamageSource source = event.getSource();
 
-        if (entityLiving.getEffect(SeasonalsMobEffects.THORN_RESISTANCE.get()) != null) {
+        if (entityLiving.getEffect(SeasonalsMobEffects.THORN_RESISTANCE.get()) != null && source.is(SeasonalsDamageTypeTags.AFFECTED_BY_THORN_RESISTANCE)) {
+            event.setCanceled(true);
+            /*
             if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource) source).isThorns()) || isAtmosphericDamage(source)) {
                 event.setCanceled(true);
             }
+
+             */
         }
     }
 
@@ -48,7 +49,7 @@ public class SeasonalsEvents {
         LivingEntity entity = event.getEntity();
 
         if (entity instanceof Player player) {
-            if (!player.level.isClientSide) {
+            if (!player.level().isClientSide) {
                 if (player.hasEffect(SeasonalsMobEffects.STUFFED.get())) {
                     MobEffectInstance effect = player.getEffect(SeasonalsMobEffects.STUFFED.get());
                     FoodData foodData = player.getFoodData();
@@ -120,6 +121,6 @@ public class SeasonalsEvents {
     }
 
     private static boolean isAtmosphericDamage(DamageSource source) {
-        return (ModIntegration.isAtmosphericLoaded() && (source == AtmosphericDamageSources.ALOE_LEAVES || source == AtmosphericDamageSources.BARREL_CACTUS || source == AtmosphericDamageSources.YUCCA_BRANCH || source == AtmosphericDamageSources.YUCCA_FLOWER || source == AtmosphericDamageSources.YUCCA_LEAVES || source == AtmosphericDamageSources.YUCCA_SAPLING));
+        return (ModIntegration.isAtmosphericLoaded() /*&& (source == AtmosphericDamageSources.ALOE_LEAVES || source == AtmosphericDamageSources.BARREL_CACTUS || source == AtmosphericDamageSources.YUCCA_BRANCH || source == AtmosphericDamageSources.YUCCA_FLOWER || source == AtmosphericDamageSources.YUCCA_LEAVES || source == AtmosphericDamageSources.YUCCA_SAPLING)*/);
     }
 }

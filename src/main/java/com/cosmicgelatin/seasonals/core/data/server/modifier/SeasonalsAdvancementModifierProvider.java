@@ -9,21 +9,23 @@ import com.teamabnormals.blueprint.common.advancement.modification.modifiers.Eff
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
 import net.minecraft.advancements.critereon.MobEffectsPredicate;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collection;
+import java.util.concurrent.CompletableFuture;
 
 public class SeasonalsAdvancementModifierProvider extends AdvancementModifierProvider {
 
-    public SeasonalsAdvancementModifierProvider(DataGenerator dataGenerator) {
-        super(dataGenerator, Seasonals.MODID);
+    public SeasonalsAdvancementModifierProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(Seasonals.MODID, packOutput, lookupProvider);
     }
 
     @Override
-    protected void registerEntries() {
+    protected void registerEntries(HolderLookup.Provider provider) {
         CriteriaModifier.Builder constructBalancedDiet = CriteriaModifier.builder(this.modId);
         Collection<RegistryObject<Item>> items = SeasonalsItems.HELPER.getDeferredRegister().getEntries();
 

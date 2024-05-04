@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/oxidized_beetroot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

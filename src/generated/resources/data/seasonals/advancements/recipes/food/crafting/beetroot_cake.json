@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/beetroot_cake"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

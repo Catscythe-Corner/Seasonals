@@ -4,7 +4,7 @@ import com.cosmicgelatin.seasonals.common.item.SeasonalsFlavoredCandleCake;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.teamabnormals.neapolitan.common.block.FlavoredCandleCakeBlock;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,8 +21,8 @@ import static com.cosmicgelatin.seasonals.core.data.SeasonalsDatagenUtil.*;
 
 public class SeasonalsBlockStateProvider extends BlockStateProvider {
 
-    public SeasonalsBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, Seasonals.MODID, exFileHelper);
+    public SeasonalsBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+        super(output, Seasonals.MODID, exFileHelper);
     }
 
     @Override

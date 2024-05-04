@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:cooking/roasted_beetroot"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -4,12 +4,12 @@ import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsMobEffects;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class SeasonalsLangProvider extends LanguageProvider {
-    public SeasonalsLangProvider(DataGenerator gen) {
-        super(gen, Seasonals.MODID, "en_us");
+    public SeasonalsLangProvider(PackOutput packOutput) {
+        super(packOutput, Seasonals.MODID, "en_us");
     }
 
     @Override

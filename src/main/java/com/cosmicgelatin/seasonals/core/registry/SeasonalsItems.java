@@ -22,29 +22,29 @@ public class SeasonalsItems {
     public static final ItemSubRegistryHelper HELPER = Seasonals.REGISTRY_HELPER.getItemSubHelper();
 
     //Pumpkin Flavor
-    public static final RegistryObject<Item> PUMPKIN_PUREE = HELPER.createItem("pumpkin_puree", () -> new Item(new Item.Properties().food(Foods.PUMPKIN_PUREE).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = HELPER.createItem("pumpkin_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.PUMPKIN_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_MILKSHAKE = HELPER.createItem("pumpkin_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.PUMPKIN_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> CHOCOLATE_PUMPKIN_MUFFIN = HELPER.createItem("chocolate_pumpkin_muffin", () -> new Item(new Item.Properties().food(Foods.CHOCOLATE_PUMPKIN_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> PUMPKIN_ADZUKI_STEW = HELPER.createItem("pumpkin_adzuki_stew", () -> new BowlFoodItem(new Item.Properties().food(Foods.PUMPKIN_ADZUKI_STEW).stacksTo(1).craftRemainder(Items.BOWL).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> PUMPKIN_PUREE = HELPER.createItem("pumpkin_puree", () -> new Item(new Item.Properties().food(Foods.PUMPKIN_PUREE)));
+    public static final RegistryObject<Item> PUMPKIN_ICE_CREAM = HELPER.createItem("pumpkin_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.PUMPKIN_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1)));
+    public static final RegistryObject<Item> PUMPKIN_MILKSHAKE = HELPER.createItem("pumpkin_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.PUMPKIN_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> CHOCOLATE_PUMPKIN_MUFFIN = HELPER.createItem("chocolate_pumpkin_muffin", () -> new Item(new Item.Properties().food(Foods.CHOCOLATE_PUMPKIN_MUFFIN)));
+    public static final RegistryObject<Item> PUMPKIN_ADZUKI_STEW = HELPER.createItem("pumpkin_adzuki_stew", () -> new BowlFoodItem(new Item.Properties().food(Foods.PUMPKIN_ADZUKI_STEW).stacksTo(1).craftRemainder(Items.BOWL)));
 
     //Sweet Berry Flavor
-    public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = HELPER.createItem("sweet_berry_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.SWEET_BERRY_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> SWEET_BERRY_MILKSHAKE = HELPER.createItem("sweet_berry_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.SWEET_BERRY_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> GLAZED_SWEET_BERRIES = HELPER.createItem("glazed_sweet_berries", () -> new Item(new Item.Properties().food(Foods.GLAZED_SWEET_BERRIES).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> SWEET_BERRY_VANILLA_YOGURT = HELPER.createItem("sweet_berry_vanilla_yogurt", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_VANILLA_YOGURT).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> SWEET_BERRY_ICE_CREAM = HELPER.createItem("sweet_berry_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.SWEET_BERRY_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1)));
+    public static final RegistryObject<Item> SWEET_BERRY_MILKSHAKE = HELPER.createItem("sweet_berry_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.SWEET_BERRY_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> GLAZED_SWEET_BERRIES = HELPER.createItem("glazed_sweet_berries", () -> new Item(new Item.Properties().food(Foods.GLAZED_SWEET_BERRIES)));
+    public static final RegistryObject<Item> SWEET_BERRY_VANILLA_YOGURT = HELPER.createItem("sweet_berry_vanilla_yogurt", () -> new BowlFoodItem(new Item.Properties().food(Foods.SWEET_BERRY_VANILLA_YOGURT).craftRemainder(Items.BOWL).stacksTo(1)));
 
     //Beetroot Flavor
-    public static final RegistryObject<Item> BEETROOT_ICE_CREAM = HELPER.createItem("beetroot_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.BEETROOT_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> BEETROOT_MILKSHAKE = HELPER.createItem("beetroot_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.BEETROOT_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> ROASTED_BEETROOT = HELPER.createItem("roasted_beetroot", () -> new Item(new Item.Properties().food(Foods.ROASTED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> OXIDIZED_BEETROOT = HELPER.createItem("oxidized_beetroot", () -> new Item(new Item.Properties().food(Foods.OXIDIZED_BEETROOT).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> BEETROOT_ICE_CREAM = HELPER.createItem("beetroot_ice_cream", () -> new IceCreamItem(new Item.Properties().food(Foods.BEETROOT_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1)));
+    public static final RegistryObject<Item> BEETROOT_MILKSHAKE = HELPER.createItem("beetroot_milkshake", () -> new MilkshakeItem(new Item.Properties().food(Foods.BEETROOT_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+    public static final RegistryObject<Item> ROASTED_BEETROOT = HELPER.createItem("roasted_beetroot", () -> new Item(new Item.Properties().food(Foods.ROASTED_BEETROOT)));
+    public static final RegistryObject<Item> OXIDIZED_BEETROOT = HELPER.createItem("oxidized_beetroot", () -> new Item(new Item.Properties().food(Foods.OXIDIZED_BEETROOT)));
 
     //Other Food
-    public static final RegistryObject<Item> RABBIT_ROAST = HELPER.createItem("rabbit_roast", () -> new Item(new Item.Properties().food(Foods.RABBIT_ROAST).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> MIXED_BERRY_MUFFIN = HELPER.createItem("mixed_berry_muffin", () -> new Item(new Item.Properties().food(Foods.MIXED_BERRY_MUFFIN).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> RED_VELVET_CUPCAKE = HELPER.createItem("red_velvet_cupcake", () -> new Item(new Item.Properties().food(Foods.RED_VELVET_CUPCAKE).tab(CreativeModeTab.TAB_FOOD)));
-    public static final RegistryObject<Item> BANANA_SPLIT_SUNDAE = HELPER.createItem("banana_split_sundae", () -> new Item(new Item.Properties().food(Foods.BANANA_SPLIT_SUNDAE).tab(CreativeModeTab.TAB_FOOD)));
+    public static final RegistryObject<Item> RABBIT_ROAST = HELPER.createItem("rabbit_roast", () -> new Item(new Item.Properties().food(Foods.RABBIT_ROAST)));
+    public static final RegistryObject<Item> MIXED_BERRY_MUFFIN = HELPER.createItem("mixed_berry_muffin", () -> new Item(new Item.Properties().food(Foods.MIXED_BERRY_MUFFIN)));
+    public static final RegistryObject<Item> RED_VELVET_CUPCAKE = HELPER.createItem("red_velvet_cupcake", () -> new Item(new Item.Properties().food(Foods.RED_VELVET_CUPCAKE)));
+    public static final RegistryObject<Item> BANANA_SPLIT_SUNDAE = HELPER.createItem("banana_split_sundae", () -> new Item(new Item.Properties().food(Foods.BANANA_SPLIT_SUNDAE)));
 
     //Cake Slices
     public static final RegistryObject<Item> PUMPKIN_CAKE_SLICE = HELPER.createItem("pumpkin_cake_slice", () -> new CakeSliceItem(new Item.Properties().food(Foods.CAKE_SLICE), SeasonalsMobEffects.STUFFED.get(), 200));

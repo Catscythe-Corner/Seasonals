@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/mixed_berry_muffin"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

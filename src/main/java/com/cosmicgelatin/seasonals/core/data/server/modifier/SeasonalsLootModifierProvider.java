@@ -4,7 +4,8 @@ import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
 import com.teamabnormals.blueprint.common.loot.modification.LootModifierProvider;
 import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolEntriesModifier;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -15,16 +16,17 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Collections;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
 public class SeasonalsLootModifierProvider extends LootModifierProvider {
 
-    public SeasonalsLootModifierProvider(DataGenerator dataGenerator) {
-        super(dataGenerator, Seasonals.MODID);
+    public SeasonalsLootModifierProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(Seasonals.MODID, packOutput, lookupProvider);
     }
 
     @Override
-    protected void registerEntries() {
+    protected void registerEntries(HolderLookup.Provider provider) {
         addNoneReplacingModifier("add_oxidized_beetroot_to_underwater_ruins", createLootEntry(SeasonalsItems.OXIDIZED_BEETROOT, 1, 0, 1), BuiltInLootTables.UNDERWATER_RUIN_SMALL, BuiltInLootTables.UNDERWATER_RUIN_BIG);
         addNoneReplacingModifier("add_oxidized_beetroot_to_shipwreck_treasure", createLootEntry(SeasonalsItems.OXIDIZED_BEETROOT, 5, 0, 1), BuiltInLootTables.SHIPWRECK_TREASURE);
 

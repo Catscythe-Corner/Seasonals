@@ -29,8 +29,8 @@
   "selector": {
     "type": "names",
     "config": [
-      "minecraft:chests/underwater_ruin_small",
-      "minecraft:chests/underwater_ruin_big"
+      "minecraft:chests/underwater_ruin_big",
+      "minecraft:chests/underwater_ruin_small"
     ]
   }
 }

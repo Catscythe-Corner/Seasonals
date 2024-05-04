@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/beetroot_milkshake"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

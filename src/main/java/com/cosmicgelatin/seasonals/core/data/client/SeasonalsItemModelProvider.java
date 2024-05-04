@@ -3,7 +3,7 @@ package com.cosmicgelatin.seasonals.core.data.client;
 import com.cosmicgelatin.seasonals.core.Seasonals;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsBlocks;
 import com.cosmicgelatin.seasonals.core.registry.SeasonalsItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -15,8 +15,8 @@ import static com.cosmicgelatin.seasonals.core.data.SeasonalsDatagenUtil.*;
 
 public class SeasonalsItemModelProvider extends ItemModelProvider {
 
-    public SeasonalsItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Seasonals.MODID, existingFileHelper);
+    public SeasonalsItemModelProvider(PackOutput packOutput, ExistingFileHelper existingFileHelper) {
+        super(packOutput, Seasonals.MODID, existingFileHelper);
     }
 
     @Override

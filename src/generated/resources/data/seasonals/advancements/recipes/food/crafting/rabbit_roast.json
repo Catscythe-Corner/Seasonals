@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/rabbit_roast"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

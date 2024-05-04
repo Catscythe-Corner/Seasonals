@@ -30,5 +30,6 @@
     "recipes": [
       "seasonals:crafting/pumpkin_puree"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
