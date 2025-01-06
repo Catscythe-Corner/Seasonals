@@ -2,6 +2,30 @@
   "values": [
     "minecraft:thorns",
     "minecraft:cactus",
-    "minecraft:sweet_berry_bush"
+    "minecraft:sweet_berry_bush",
+    {
+      "id": "atmospheric:yucca_sapling",
+      "required": false
+    },
+    {
+      "id": "atmospheric:yucca_flower",
+      "required": false
+    },
+    {
+      "id": "atmospheric:yucca_branch",
+      "required": false
+    },
+    {
+      "id": "atmospheric:yucca_leaves",
+      "required": false
+    },
+    {
+      "id": "atmospheric:barrel_cactus",
+      "required": false
+    },
+    {
+      "id": "atmospheric:aloe_leaves",
+      "required": false
+    }
   ]
 }

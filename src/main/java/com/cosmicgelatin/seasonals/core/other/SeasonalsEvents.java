@@ -35,12 +35,6 @@ public class SeasonalsEvents {
 
         if (entityLiving.getEffect(SeasonalsMobEffects.THORN_RESISTANCE.get()) != null && source.is(SeasonalsDamageTypeTags.AFFECTED_BY_THORN_RESISTANCE)) {
             event.setCanceled(true);
-            /*
-            if (source == DamageSource.CACTUS || source == DamageSource.SWEET_BERRY_BUSH || ((source instanceof EntityDamageSource) && ((EntityDamageSource) source).isThorns()) || isAtmosphericDamage(source)) {
-                event.setCanceled(true);
-            }
-
-             */
         }
     }
 
@@ -118,9 +112,5 @@ public class SeasonalsEvents {
                 }
             }
         }
-    }
-
-    private static boolean isAtmosphericDamage(DamageSource source) {
-        return (ModIntegration.isAtmosphericLoaded() /*&& (source == AtmosphericDamageSources.ALOE_LEAVES || source == AtmosphericDamageSources.BARREL_CACTUS || source == AtmosphericDamageSources.YUCCA_BRANCH || source == AtmosphericDamageSources.YUCCA_FLOWER || source == AtmosphericDamageSources.YUCCA_LEAVES || source == AtmosphericDamageSources.YUCCA_SAPLING)*/);
     }
 }

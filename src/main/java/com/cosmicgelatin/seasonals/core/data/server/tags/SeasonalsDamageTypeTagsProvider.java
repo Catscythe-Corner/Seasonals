@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.DamageTypeTagsProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.damagesource.DamageType;
@@ -27,7 +28,18 @@ public class SeasonalsDamageTypeTagsProvider extends DamageTypeTagsProvider {
                 DamageTypes.THORNS,
                 DamageTypes.CACTUS,
                 DamageTypes.SWEET_BERRY_BUSH
-        );
+        )
+                .addOptional(atmosphericDmg("yucca_sapling"))
+                .addOptional(atmosphericDmg("yucca_flower"))
+                .addOptional(atmosphericDmg("yucca_branch"))
+                .addOptional(atmosphericDmg("yucca_leaves"))
+                .addOptional(atmosphericDmg("barrel_cactus"))
+                .addOptional(atmosphericDmg("aloe_leaves"));
 
+
+    }
+
+    private ResourceLocation atmosphericDmg(String name) {
+        return new ResourceLocation("atmospheric", name);
     }
 }

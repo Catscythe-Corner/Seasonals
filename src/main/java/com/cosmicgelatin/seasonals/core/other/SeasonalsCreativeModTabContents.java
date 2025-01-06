@@ -38,7 +38,7 @@ public class SeasonalsCreativeModTabContents {
         CreativeModeTabContentsPopulator.mod(ModIntegration.FARMERSDELIGHT_ID)
                 .tab(ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(ModIntegration.FARMERSDELIGHT_ID, ModIntegration.FARMERSDELIGHT_ID)))
                 .addItems(
-                        PUMPKIN_ICE_CREAM_BLOCK, SWEET_BERRY_ICE_CREAM_BLOCK, BEETROOT_ICE_CREAM_BLOCK
+                        PUMPKIN_CAKE_SLICE, SWEET_BERRY_CAKE_SLICE, BEETROOT_CAKE_SLICE
                 )
         ;
     }

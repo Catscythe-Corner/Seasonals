@@ -98,11 +98,11 @@ dependencies {
     implementation fg.deobf("com.teamabnormals:${blueprint_id}:${mc_version}-${blueprint_version}")
     implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_id}")
 
-    //implementation fg.deobf("curse.maven:atmospheric-362393:${atmospheric_id}")
+    implementation fg.deobf("curse.maven:atmospheric-362393:${atmospheric_id}")
     implementation fg.deobf("curse.maven:berry-good-355589:${bg_id}")
     implementation fg.deobf("curse.maven:autumnity-365045:${autumnity_id}")
 
-    implementation fg.deobf("curse.maven:jei-238222:5101366")
+    compileOnly fg.deobf("curse.maven:jei-238222:5101366")
 }
 
 mixin {
